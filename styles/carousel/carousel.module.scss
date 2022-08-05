@@ -1,0 +1,65 @@
+.carousel {
+  height: 100%;
+  overflow: hidden;
+  position: relative;
+
+  .arrow {
+    &:first-child {
+      left: 30px;
+      transform: translateY(-50%) rotate(-180deg);
+
+      @media only screen and (min-width: 1024px) {
+        left: 65px;
+      }
+    }
+
+    &:last-child {
+      right: 30px;
+      @media only screen and (min-width: 1024px) {
+        right: 65px;
+      }
+    }
+  }
+}
+
+.arrow {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  border: none;
+  background: transparent;
+  cursor: pointer;
+  z-index: 1;
+
+  @media only screen and (max-width: 768px) {
+    background-color: #ffffff;
+    padding: 0.5em 1em;
+    top: auto;
+    bottom: 10px;
+  }
+}
+
+.carouselItemWrapper {
+  display: flex;
+  position: absolute;
+  flex-grow: 1;
+  flex-basis: 0;
+  height: 100%;
+//   transition: all 0.5s linear;
+}
+
+.carouselItem {
+  height: 100%;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  transition: all 2s linear;
+}
+
+.active {
+    opacity: 1;
+    transition: all 1.3s linear;
+}

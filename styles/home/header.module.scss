@@ -1,0 +1,56 @@
+.headerServices {
+  height: calc(100vh - 345px);
+  display: flex;
+
+  > div {
+    flex-grow: 1;
+    flex-basis: 0;
+  }
+}
+
+.headerCarousel {
+  height: 400px;
+  border-top: 1px solid #979797;
+  border-bottom: 1px solid #979797;
+
+  @media only screen and (min-width: 769px) {
+    height: 345px;
+  }
+}
+
+.headerCarouselContent {
+  max-width: 695px;
+  padding: 1em 2em;
+
+  @media only screen and (min-width: 769px) {
+    padding: 0;
+  }
+
+  h3 {
+    font-family: "aeonik-regular";
+    font-style: normal;
+    font-weight: 700;
+    font-size: 34px;
+    line-height: 40px;
+    color: #e24c36;
+    margin-bottom: 5px;
+
+    @media only screen and (min-width: 769px) {
+      font-size: 48px;
+      line-height: 56px;
+    }
+  }
+
+  p {
+    font-family: "Poppins";
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 27px;
+
+    @media only screen and (min-width: 769px) {
+      font-size: 24px;
+      line-height: 37px;
+    }
+  }
+}

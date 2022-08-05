@@ -1,0 +1,38 @@
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 18px 32px;
+
+  @media only screen and (min-width: 769px) {
+    padding: 18px 65px;
+  }
+}
+
+.navbarFixed {
+  position: sticky;
+  top: 0;
+  z-index: 2;
+  width: 100%;
+  background: #000000;
+  box-shadow: 0 0 3px #ffffff;
+}
+
+.menuButton {
+  border: none;
+  background: transparent;
+  cursor: pointer;
+
+  i {
+    display: block;
+    width: 43.15px;
+    height: 2.78px;
+    background: #e24c36;
+    border-radius: 4px;
+    margin-bottom: 8.35px;
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+}
