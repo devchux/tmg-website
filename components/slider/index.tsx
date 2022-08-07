@@ -11,10 +11,11 @@ import React, {
 import { ReactSVG } from "react-svg";
 import styles from "styles/slider/slider.module.scss";
 
-const Slider: FC<{ children: ReactElement[]; gap?: boolean }> = ({
-  children,
-  gap,
-}) => {
+const Slider: FC<{
+  children: ReactElement[];
+  gap?: boolean;
+  noCount?: boolean;
+}> = ({ children, gap, noCount = false }) => {
   const [index, setIndex] = useState<number>(0);
 
   const childrenLength: number = useMemo(
@@ -24,7 +25,7 @@ const Slider: FC<{ children: ReactElement[]; gap?: boolean }> = ({
 
   const refs = Array(childrenLength).fill(useRef(null));
 
-  const childWidth = refs[index].current?.getBoundingClientRect().width;
+  const childWidth = useMemo(() => refs[index].current?.getBoundingClientRect().width || 0, [refs, index]);
 
   const slide = useCallback(
     (i: number) => {
@@ -53,9 +54,7 @@ const Slider: FC<{ children: ReactElement[]; gap?: boolean }> = ({
         className={`${styles.sliderItemWrapper} ${gap ? styles.gap : ""}`}
         style={{
           width: gap ? "fit-content" : `${childrenLength * 100}%`,
-          left: gap
-            ? `-${index * childWidth}px`
-            : `-${index * 100}%`,
+          left: gap ? `-${index * (childWidth + 34.47)}px` : `-${index * 100}%`,
         }}
       >
         {Children.map(children, (child: ReactElement, n: number) => {
@@ -69,11 +68,13 @@ const Slider: FC<{ children: ReactElement[]; gap?: boolean }> = ({
       >
         <ReactSVG src="/assets/svg/greater-than.svg" />
       </button>
-      <div className={styles.count}>
-        <p>
-          {index + 1}/{childrenLength}
-        </p>
-      </div>
+      {!noCount && (
+        <div className={styles.count}>
+          <p>
+            {index + 1}/{childrenLength}
+          </p>
+        </div>
+      )}
     </div>
   );
 };

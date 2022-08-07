@@ -13,7 +13,7 @@ const NihuMedia = () => {
             <Link href="/">Learn More &gt;</Link>
         </div>
         <div className={styles.sliderWrapper}>
-            <Slider gap>
+            <Slider gap noCount>
                 {Array(8).fill(null).map((_, i) => {
                     return (
                         <SliderItem key={i}>
