@@ -1,6 +1,12 @@
 .headerServices {
-  height: calc(100vh - 345px);
+  height: calc(100vh - 120px);
   display: flex;
+  flex-direction: column;
+      
+  @media only screen and (min-width: 768px) {
+    flex-direction: row;
+    height: calc(100vh - 345px);
+  }
 
   > div {
     flex-grow: 1;
@@ -9,7 +15,7 @@
 }
 
 .headerCarousel {
-  height: 400px;
+  height: 360px;
   border-top: 1px solid #979797;
   border-bottom: 1px solid #979797;
 
@@ -30,7 +36,7 @@
     font-family: "aeonik-regular";
     font-style: normal;
     font-weight: 700;
-    font-size: 34px;
+    font-size: 30px;
     line-height: 40px;
     color: #e24c36;
     margin-bottom: 5px;

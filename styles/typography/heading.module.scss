@@ -1,0 +1,14 @@
+.heading {
+  font-family: "aeonik-bold";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 30px;
+  line-height: 31px;
+  text-transform: uppercase;
+  color: #E24C36;
+
+  @media only screen and (min-width: 1024px) {
+    font-size: 48px;
+    line-height: 49px;
+  }
+}

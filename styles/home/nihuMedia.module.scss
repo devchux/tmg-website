@@ -1,0 +1,37 @@
+.nihuMedia {
+  border-bottom: 1px solid #979797;
+  padding-bottom: 86.25px;
+}
+
+.top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 42px 56px 42px 106px;
+
+  a {
+    text-decoration: none;
+    font-family: "aeonik-regular";
+    font-style: normal;
+    font-weight: 400;
+    font-size: 20px;
+    line-height: 0px;
+    letter-spacing: 3.625px;
+    text-transform: uppercase;
+    color: #ffffff;
+  }
+}
+
+.sliderWrapper {
+  height: 380.75px;
+  margin-left: 106px;
+}
+
+.singleMedia {
+  width: 339.02px;
+  height: 100%;
+  background: #d9d9d9;
+  border-radius: 2px;
+  background-size: cover;
+  background-repeat: no-repeat;
+}

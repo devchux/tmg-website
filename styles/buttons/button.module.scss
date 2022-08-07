@@ -1,22 +1,30 @@
 .customButton {
   width: 100%;
-  max-width: 186px;
-  height: 62px;
+  max-width: 120px;
+  height: 42px;
   border: none;
   background: transparent;
   background: #d9d9d9;
-  border-radius: 9px;
+  border-radius: 5px;
   font-family: "aeonik-bold";
   font-style: normal;
   font-weight: 700;
-  font-size: 16px;
-  line-height: 24px;
+  font-size: 12px;
+  line-height: 18px;
   text-align: center;
   letter-spacing: 0.2px;
   cursor: pointer;
   position: relative;
   overflow: hidden;
   transition: all 0.3s linear;
+
+  @media only screen and (min-width: 600px) {
+    max-width: 186px;
+    height: 62px;
+    font-size: 16px;
+    line-height: 24px;
+    border-radius: 9px;
+  }
 
   span {
     position: relative;

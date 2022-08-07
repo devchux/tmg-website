@@ -28,6 +28,11 @@
   src: url("../fonts/AeonikTRIAL-RegularItalic.otf");
 }
 
+@font-face {
+  font-family: "american-captain";
+  src: url("../fonts/American-Captain.otf");
+}
+
 * {
   margin: 0;
   padding: 0;
@@ -36,6 +41,7 @@
 
 body {
   background-color: #000000;
+  scroll-behavior: smooth;
 }
 
 p {
