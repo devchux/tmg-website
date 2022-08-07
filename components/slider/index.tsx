@@ -44,7 +44,7 @@ const Slider: FC<{
       {index > 0 && (
         <button
           id="right-arrow"
-          onClick={() => slide(index + 1)}
+          onClick={() => slide(index - 1)}
           className={`${styles.arrow} ${styles.leftArrow}`}
         >
           <ReactSVG src="/assets/svg/greater-than.svg" />
