@@ -1,0 +1,51 @@
+.trendingTopics {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin: 96px 0 79px 0;
+  gap: 2em;
+  padding: 0 2em;
+
+  @media only screen and (min-width: 768px) {
+    margin: 60px 0 40px 0;
+  }
+
+  @media only screen and (min-width: 1024px) {
+    margin: 96px 0 79px 0;
+    gap: 0;
+    padding: 0;
+  }
+}
+
+.left {
+  p {
+    font-style: normal;
+    font-weight: 400;
+    font-size: 28px;
+    line-height: 36px;
+  }
+}
+
+.content {
+  margin-top: 47px;
+
+  p {
+    font-style: normal;
+    font-weight: 400;
+    font-size: 15px;
+    line-height: 24px;
+
+    @media only screen and (min-width: 768px) {
+      max-width: 700px;
+    }
+
+    @media only screen and (min-width: 1024px) {
+      max-width: 330px;
+    }
+  }
+}
+
+.chart {
+  padding: 0 2em;
+}

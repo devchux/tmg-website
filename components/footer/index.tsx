@@ -1,0 +1,68 @@
+import Image from "next/image";
+import Link from "next/link";
+import React from "react";
+import { ReactSVG } from "react-svg";
+import styles from "styles/footer/footer.module.scss";
+
+const Footer = () => {
+  return (
+    <div className={styles.footer}>
+      <div className={styles.logo}>
+        <Image
+          src="/assets/images/logo.png"
+          alt="logo"
+          width="195"
+          height="84"
+        />
+      </div>
+      <div className={styles.content}>
+        <div className={styles.description}>
+          <p>
+            Funding freemium long tail hypotheses first mover advantage asvisor
+            hypotheses. Venture twitter assets disruptive partnership paradigm
+            shift business-to-consumer.
+          </p>
+          <div>
+            <div className={styles.contact}>
+              <ReactSVG src="/assets/svg/email.svg" />
+              <Link href="/">agensi@mail.com</Link>
+            </div>
+            <div className={styles.contact}>
+              <ReactSVG src="/assets/svg/phone.svg" />
+              <Link href="/">+ 12 3456 7890</Link>
+            </div>
+          </div>
+        </div>
+        <div className={styles.sideLinks}>
+          <div>
+            <p className={styles.title}>Services</p>
+            <div>
+              <Link href="/">Web Hosting</Link>
+              <Link href="/">Domains</Link>
+              <Link href="/">Premium Hosting</Link>
+              <Link href="/">Private Server</Link>
+              <Link href="/">E-mail Hosting</Link>
+            </div>
+          </div>
+          <div>
+            <p className={styles.title}>About Us</p>
+            <div>
+              <Link href="/">Milestone</Link>
+              <Link href="/">Check Our Pricing Plan</Link>
+              <Link href="/">Expert Team</Link>
+              <Link href="/">Our Exciting News</Link>
+            </div>
+          </div>
+          <div>
+            <p className={styles.title}>Address</p>
+            <div className={styles.address}>
+              <p>123 Lorem Ipsum Street Jakarta, Indonesia</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  );
+};
+
+export default Footer;

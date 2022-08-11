@@ -1,0 +1,88 @@
+.footer {
+  max-width: 1114px;
+  padding: 0 2em;
+  margin: auto;
+  margin-bottom: 62px;
+
+  @media only screen and (min-width: 1114px) {
+    padding: 0;
+  }
+
+  a {
+    text-decoration: none;
+    display: block;
+    width: fit-content;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 23px;
+    margin-bottom: 10px;
+    color: #ffffff;
+
+    &:hover {
+      text-decoration: underline;
+      color: #e24c36;
+    }
+  }
+}
+
+.logo {
+  margin-bottom: 48px;
+}
+
+.content {
+  display: flex;
+  justify-content: space-between;
+  flex-direction: column;
+
+  @media only screen and (min-width: 768px) {
+    flex-direction: row;
+    align-items: center;
+  }
+}
+
+.description {
+  max-width: 285px;
+
+  p {
+    font-weight: 400;
+    font-size: 15px;
+    line-height: 24px;
+    margin-bottom: 40px;
+  }
+}
+
+.sideLinks {
+  display: flex;
+  align-items: flex-start;
+  gap: 20px;
+  flex-direction: column;
+
+  @media only screen and (min-width: 768px) {
+    flex-direction: row;
+    gap: 130px;
+  }
+}
+
+.title {
+  margin-bottom: 13px;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 24px;
+  color: #e24c36;
+}
+
+.address {
+  max-width: 192px;
+}
+
+.contact {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 20px;
+
+  a {
+    margin: 0;
+  }
+}

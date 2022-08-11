@@ -1,3 +1,4 @@
+import Footer from "components/footer";
 import Navbar from "components/nav/navbar";
 import type { AppProps } from "next/app";
 import { Fragment } from "react";
@@ -8,6 +9,7 @@ function MyApp({ Component, pageProps }: AppProps) {
     <Fragment>
       <Navbar />
       <Component {...pageProps} />
+      <Footer />
     </Fragment>
   );
 }

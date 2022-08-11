@@ -1,0 +1,34 @@
+.socialites {
+    display: flex;
+}
+
+.socialite {
+    flex-grow: 1;
+    flex-basis: 0;
+    height: 276px;
+    overflow: hidden;
+    position: relative;
+    cursor: pointer;
+
+    > span {
+        z-index: 0;
+    }
+
+    > div {
+        position: absolute;
+        background-color: rgba(#000000, 0.2);
+        width: 100%;
+        height: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        opacity: 0;
+    }
+
+    &:hover {
+        > div {
+            opacity: 1;
+            transition: all 0.5s ease;
+        }
+    }
+}
