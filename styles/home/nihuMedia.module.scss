@@ -32,7 +32,7 @@
 }
 
 .sliderWrapper {
-  height: 380.75px;
+  height: 450px;
   margin-left: 2em;
 
   @media only screen and (min-width: 768px) {
@@ -41,12 +41,16 @@
 }
 
 .singleMedia {
-  width: 339.02px;
-  height: 100%;
+  width: 300px;
+  height: 75%;
   background: #d9d9d9;
   border-radius: 2px;
   background-size: cover;
   background-repeat: no-repeat;
+}
+
+.mediaDescription {
+  margin-top: 24px;
 }
 
 .mobileLink {

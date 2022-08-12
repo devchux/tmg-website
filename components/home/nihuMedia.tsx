@@ -20,6 +20,13 @@ const NihuMedia = () => {
               return (
                 <SliderItem key={i}>
                   <div className={styles.singleMedia}></div>
+                  <div className={styles.mediaDescription}>
+                    <p>
+                      Our talent pool of pros and skilled creatives originate,
+                      develop, and produce concepts, themes, content, branded
+                      products, experiences and events.
+                    </p>
+                  </div>
                 </SliderItem>
               );
             })}
