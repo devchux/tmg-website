@@ -3,8 +3,10 @@ import HeaderService from "./headerService";
 import styles from "styles/home/header.module.scss";
 import Carousel from "components/carousel";
 import CarouselItem from "components/carousel/carouselItem";
+import { useRouter } from "next/router";
 
 const Header = () => {
+  const router = useRouter()
   return (
     <header>
       <div className={styles.headerServices}>
@@ -15,6 +17,7 @@ const Header = () => {
             </>
           }
           source="/assets/images/service1.png"
+          onClick={() => router.push('/talents')}
         />
         <HeaderService
           title={

@@ -2,9 +2,10 @@ import { FC, ReactNode } from "react";
 import Button from "components/buttons/button";
 import styles from "styles/home/headerService.module.scss";
 
-const HeaderService: FC<{ title: string | ReactNode; source: string }> = ({
+const HeaderService: FC<{ title: string | ReactNode; source: string; onClick?: () => void;  }> = ({
   title,
   source,
+  onClick,
 }) => {
   return (
     <div className={styles.headerService}>
@@ -14,7 +15,7 @@ const HeaderService: FC<{ title: string | ReactNode; source: string }> = ({
       />
       <div className={styles.content}>
         <h5>{title}</h5>
-        <Button>LEARN MORE</Button>
+        <Button onClick={onClick}>LEARN MORE</Button>
       </div>
     </div>
   );
