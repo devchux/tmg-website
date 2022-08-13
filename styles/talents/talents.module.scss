@@ -1,0 +1,100 @@
+.modalImage {
+  width: 387px;
+  height: 350px;
+  overflow: hidden;
+  border-radius: 5px;
+
+  @media only screen and (min-width: 500px) {
+    height: 450px;
+  }
+}
+
+.modalContent {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 60px;
+  flex-wrap: wrap;
+
+  @media only screen and (min-width: 768px) {
+    gap: 142px;
+  }
+}
+
+.text {
+  max-width: 420px;
+
+  h6 {
+    font-family: "aeonik-regular";
+    font-style: normal;
+    font-weight: 400;
+    font-size: 24px;
+    line-height: 30px;
+    margin-bottom: 1em;
+    text-transform: capitalize;
+    color: #ffffff;
+  }
+
+  p {
+    font-family: "Poppins";
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 21px;
+    color: #ffffff;
+  }
+}
+
+.modalTitle {
+  letter-spacing: 9px;
+}
+
+.list {
+  display: grid;
+  grid-template-columns: repeat(1, 1fr);
+  gap: 40px;
+  max-width: 1280px;
+  padding: 96px 2em;
+  margin: auto;
+
+  @media only screen and (min-width: 500px) {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  @media only screen and (min-width: 768px) {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  > div {
+    cursor: pointer;
+  }
+}
+
+.singleImage {
+  height: 350px;
+
+  @media only screen and (min-width: 768px) {
+    height: 450px;
+  }
+}
+
+.singleTitle {
+  font-family: "aeonik-bold";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 26.4336px;
+  line-height: 30px;
+  letter-spacing: 3px;
+  text-transform: capitalize;
+  color: #ffffff;
+  margin-top: 1em;
+}
+
+.singlePosition {
+  font-family: "Poppins";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 21px;
+  color: #ffffff;
+}

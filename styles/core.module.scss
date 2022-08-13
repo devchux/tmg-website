@@ -1,0 +1,22 @@
+.header {
+  padding: 0 2em;
+
+  > div {
+    max-width: 1079px;
+    text-align: center;
+    margin: 104px auto;
+
+    p {
+      font-family: "Poppins";
+      font-style: normal;
+      font-weight: 400;
+      font-size: 16px;
+      line-height: 21px;
+      margin-top: 26px;
+    }
+  }
+}
+
+.wrapper {
+  border-bottom: 1px solid #979797;
+}

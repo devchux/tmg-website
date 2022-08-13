@@ -5,10 +5,26 @@
   font-size: 30px;
   line-height: 31px;
   text-transform: uppercase;
-  color: #E24C36;
+  color: #e24c36;
 
   @media only screen and (min-width: 1024px) {
     font-size: 48px;
     line-height: 49px;
+  }
+}
+
+.pageHeading {
+  font-family: "aeonik-bold";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 30px;
+  line-height: 31px;
+  letter-spacing: 15px;
+  text-transform: uppercase;
+  color: #ffffff;
+
+  @media only screen and (min-width: 1024px) {
+    font-size: 50px;
+    line-height: 75px;
   }
 }

@@ -15,7 +15,8 @@ const Slider: FC<{
   children: ReactElement[];
   gap?: boolean;
   noCount?: boolean;
-}> = ({ children, gap, noCount = false }) => {
+  smallArrow?: boolean;
+}> = ({ children, gap, noCount = false, smallArrow = false }) => {
   const [index, setIndex] = useState<number>(0);
 
   const childrenLength: number = useMemo(
@@ -25,7 +26,10 @@ const Slider: FC<{
 
   const refs = Array(childrenLength).fill(useRef(null));
 
-  const childWidth = useMemo(() => refs[index].current?.getBoundingClientRect().width || 0, [refs, index]);
+  const childWidth = useMemo(
+    () => refs[index].current?.getBoundingClientRect().width || 0,
+    [refs, index]
+  );
 
   const slide = useCallback(
     (i: number) => {
@@ -45,7 +49,9 @@ const Slider: FC<{
         <button
           id="right-arrow"
           onClick={() => slide(index - 1)}
-          className={`${styles.arrow} ${styles.leftArrow}`}
+          className={`${styles.arrow} ${smallArrow ? styles.smallArrow : ""} ${
+            styles.leftArrow
+          }`}
         >
           <ReactSVG src="/assets/svg/greater-than.svg" />
         </button>
@@ -64,7 +70,9 @@ const Slider: FC<{
       <button
         id="right-arrow"
         onClick={() => slide(index + 1)}
-        className={`${styles.arrow} ${styles.rightArrow}`}
+        className={`${styles.arrow} ${smallArrow ? styles.smallArrow : ""} ${
+          styles.rightArrow
+        }`}
       >
         <ReactSVG src="/assets/svg/greater-than.svg" />
       </button>

@@ -68,7 +68,7 @@ const Navbar = () => {
             </a>
           </Link>
 
-          <Link href="/">
+          <Link href="/talents">
             <a style={{ transitionDelay: `${0.2 * 5}s` }} onClick={toggleMenu}>
               Talent Managment
             </a>

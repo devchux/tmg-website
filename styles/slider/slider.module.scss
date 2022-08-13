@@ -20,6 +20,23 @@
     width: 96px;
     height: 101px;
   }
+
+  svg {
+    width: 13px;
+    height: 24px;
+  }
+}
+
+.smallArrow {
+  width: 35px;
+  height: 35px;
+  border-radius: 50%;
+  background-color: #ffffff;
+
+  svg {
+    width: 8px;
+    height: 12px;
+  }
 }
 
 .leftArrow {

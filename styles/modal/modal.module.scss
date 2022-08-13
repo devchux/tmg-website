@@ -1,0 +1,38 @@
+.modal {
+  position: fixed;
+  top: 0;
+  right: 0;
+  left: 0;
+  bottom: 0;
+  background-color: rgba(#000000, 0.9);
+  display: none;
+  align-items: center;
+  justify-content: center;
+  z-index: 999;
+}
+
+.isOpen {
+  display: flex;
+}
+
+.modalContent {
+  width: 100%;
+  max-width: 80%;
+  min-height: 80%;
+  max-height: 80%;
+  border: 3px solid #ffffff;
+  border-radius: 17px;
+  padding: 2em;
+  overflow: auto;
+}
+
+.close {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  margin-bottom: 1em;
+
+  > div {
+    cursor: pointer;
+  }
+}
