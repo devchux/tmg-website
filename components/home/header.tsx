@@ -6,7 +6,7 @@ import CarouselItem from "components/carousel/carouselItem";
 import { useRouter } from "next/router";
 
 const Header = () => {
-  const router = useRouter()
+  const router = useRouter();
   return (
     <header>
       <div className={styles.headerServices}>
@@ -17,7 +17,7 @@ const Header = () => {
             </>
           }
           source="/assets/images/service1.png"
-          onClick={() => router.push('/talents')}
+          onClick={() => router.push("/talents")}
         />
         <HeaderService
           title={
@@ -26,8 +26,13 @@ const Header = () => {
             </>
           }
           source="/assets/images/service2.png"
+          onClick={() => router.push("/media")}
         />
-        <HeaderService title="Events" source="/assets/images/service3.png" />
+        <HeaderService
+          title="Events"
+          source="/assets/images/service3.png"
+          onClick={() => router.push("/events")}
+        />
       </div>
       <div className={styles.headerCarousel}>
         <Carousel>

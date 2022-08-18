@@ -1,25 +1,12 @@
 import Image from "components/images/image";
-import Modal from "components/modal";
-import Slider from "components/slider";
-import SliderItem from "components/slider/sliderItem";
 import PageHeading from "components/typography/pageHeading";
-import React, { useState } from "react";
+import { useRouter } from "next/router";
+import React from "react";
 import styles from "styles/core.module.scss";
 import talentStyles from "styles/talents/talents.module.scss";
 
-const Talents = () => {
-  const [isOpen, setIsOpen] = useState(false);
-  const [content, setContent] = useState<{
-    image: string[];
-    name: string;
-    position: string;
-    description: string;
-  }>({
-    image: [],
-    name: "",
-    position: "",
-    description: "",
-  });
+const Events = () => {
+    const router = useRouter();
   const data = [
     {
       image: ["/assets/images/service1.png", "/assets/images/service2.png"],
@@ -60,13 +47,28 @@ const Talents = () => {
       <div className={styles.wrapper}>
         <div className={styles.header}>
           <div>
-            <PageHeading>Talent MANAGMENT</PageHeading>
+            <PageHeading>Events</PageHeading>
             <p>
-              Management services for the creative industries; art, media and
-              lifestyle. We design and implement exclusive strategies for
-              talents, geared toward image building and secure creative
-              partnerships between talents and brands.
+              We deliver an innovative touch to events, through our network of
+              highly experienced and skilled partners. Our services include Full
+              event logistics, Planning, Management and implementation.
             </p>
+            <div className={styles.headerList}>
+              <p>Our Event Producers provide the following:</p>
+              <ul>
+                <li>Concept development and Budgeting</li>
+                <li>Guest list managment</li>
+                <li>Security management</li>
+              </ul>
+            </div>
+            <div className={styles.headerList}>
+              <p>Our Event Managers provide:</p>
+              <ul>
+                <li>Execute agreed plans by managing staff</li>
+                <li>Finances</li>
+                <li>Vendor relationships and more</li>
+              </ul>
+            </div>
           </div>
         </div>
       </div>
@@ -76,8 +78,7 @@ const Talents = () => {
             <div
               key={i}
               onClick={() => {
-                setContent(item);
-                setIsOpen(true);
+                router.push(`events/${i + 1}`)
               }}
             >
               <div className={talentStyles.singleImage}>
@@ -92,36 +93,8 @@ const Talents = () => {
           ))}
         </div>
       </div>
-      <Modal isOpen={isOpen} toggle={() => setIsOpen(!isOpen)}>
-        <div className={talentStyles.modalContent}>
-          <div className={talentStyles.modalImage}>
-            {content.image.length <= 1 ? (
-              <>
-                {/* eslint-disable-next-line jsx-a11y/alt-text */}
-                <Image src={content.image[0]} />
-              </>
-            ) : (
-              <Slider smallArrow noCount>
-                {content.image.map((image, i) => (
-                  <SliderItem key={i}>
-                  {/* eslint-disable-next-line jsx-a11y/alt-text */}
-                    <Image src={image} />
-                  </SliderItem>
-                ))}
-              </Slider>
-            )}
-          </div>
-          <div className={talentStyles.text}>
-            <PageHeading className={talentStyles.modalTitle}>
-              {content.name}
-            </PageHeading>
-            <h6>{content.position}</h6>
-            <p>{content.description}</p>
-          </div>
-        </div>
-      </Modal>
     </div>
   );
 };
 
-export default Talents;
+export default Events;
