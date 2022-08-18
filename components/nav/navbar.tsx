@@ -61,7 +61,7 @@ const Navbar = () => {
 
           <Link href="/events">
             <a style={{ transitionDelay: `${0.2 * 3}s` }} onClick={toggleMenu}>
-              managment services
+              Events
             </a>
           </Link>
 
