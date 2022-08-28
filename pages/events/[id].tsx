@@ -57,10 +57,8 @@ const EventDetail = () => {
                     discuss all what business organization is about; its types
                     and forms. With the knowledge of business organizations,
                     entrepreneurs are conversant with the method that perfectly
-                    suites the type of business they intend{" "}
-                    <a href="/">venturing</a> into.
+                    suites the type of business they intend venturing into.
                   </p>
-                  <a href="/">venturing</a>
                   <ul>
                     <li>Home</li>
                     <li>Home</li>
@@ -84,8 +82,7 @@ const EventDetail = () => {
                     discuss all what business organization is about; its types
                     and forms. With the knowledge of business organizations,
                     entrepreneurs are conversant with the method that perfectly
-                    suites the type of business they intend{" "}
-                    <a href="/">venturing</a> into.
+                    suites the type of business they intend venturing into.
                   </p>
                 </div>
               </article>
