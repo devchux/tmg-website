@@ -39,8 +39,7 @@ const EventDetail = () => {
                     discuss all what business organization is about; its types
                     and forms. With the knowledge of business organizations,
                     entrepreneurs are conversant with the method that perfectly
-                    suites the type of business they intend{" "}
-                    <a href="/">venturing</a> into.
+                    suites the type of business they intend venturing into.
                   </p>
                   <p>
                     Business organizations are financial entities owned and
