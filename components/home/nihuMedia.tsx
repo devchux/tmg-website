@@ -5,7 +5,7 @@ import Link from "next/link";
 import React from "react";
 import styles from "styles/home/nihuMedia.module.scss";
 
-const NihuMedia = () => {
+const NihuMedia = ({ playlist }: { playlist: any[] }) => {
   return (
     <div className={styles.nihuMedia}>
       <div className={styles.top}>
@@ -14,17 +14,22 @@ const NihuMedia = () => {
       </div>
       <div className={styles.sliderWrapper}>
         <Slider gap noCount>
-          {Array(8)
-            .fill(null)
-            .map((_, i) => {
+          {playlist
+            ?.filter((_, i) => i !== 0)
+            .map((data, i) => {
               return (
                 <SliderItem key={i}>
-                  <div className={styles.singleMedia}></div>
+                  <div
+                    style={{
+                      backgroundImage: `url(${data?.snippet?.thumbnails?.medium?.url})`,
+                    }}
+                    className={styles.singleMedia}
+                  ></div>
                   <div className={styles.mediaDescription}>
+                    <h6>{data?.snippet?.title}</h6>
                     <p>
-                      Our talent pool of pros and skilled creatives originate,
-                      develop, and produce concepts, themes, content, branded
-                      products, experiences and events.
+                      {data?.snippet?.description.slice(0, 100)}
+                      {data?.snippet?.description.length > 100 && "..."}
                     </p>
                   </div>
                 </SliderItem>
