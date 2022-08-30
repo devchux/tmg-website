@@ -1,12 +1,20 @@
 import axios from "axios";
+import SubmitButton from "components/buttons/submitButton";
 import PageHeading from "components/typography/pageHeading";
+import { GetServerSideProps } from "next";
 import Image from "next/image";
 import { useRouter } from "next/router";
 import React from "react";
 import styles from "styles/core.module.scss";
 import talentStyles from "styles/talents/talents.module.scss";
 
-const Media = ({ data }: { data: { items: any[] } }) => {
+const Media = ({
+  data,
+  query,
+}: {
+  data: { items: any[]; nextPageToken?: string; prevPageToken?: string };
+  query?: string;
+}) => {
   const router = useRouter();
   return (
     <div>
@@ -20,7 +28,7 @@ const Media = ({ data }: { data: { items: any[] } }) => {
       <div className={styles.wrapper}>
         <div className={talentStyles.list}>
           {data?.items
-            .filter((_, i) => i !== 0)
+            .filter((_, i) => (!query ? i !== 0 : true))
             .map((item: any, i: number) => (
               <div
                 key={i}
@@ -46,17 +54,37 @@ const Media = ({ data }: { data: { items: any[] } }) => {
               </div>
             ))}
         </div>
+        <div className={talentStyles.navButtons}>
+          {data.prevPageToken && (
+            <SubmitButton
+              outlined
+              onClick={() => router.push(`media?q=${data.prevPageToken}`)}
+            >
+              Prev &lt;&lt;
+            </SubmitButton>
+          )}
+          {data.nextPageToken && (
+            <SubmitButton
+              onClick={() => router.push(`media?q=${data.nextPageToken}`)}
+            >
+              Next &gt;&gt;
+            </SubmitButton>
+          )}
+        </div>
       </div>
     </div>
   );
 };
 
-export const getServerSideProps = async () => {
+export const getServerSideProps: GetServerSideProps = async (context) => {
   const YOUTUBE_API_KEY = "AIzaSyDTw9T3ywBLK7J6NovmkcbqrvP7tB2b1dk";
   const YOUTUBE_CHANNEL_ID = "UCUBxb9BTYO5I060A8A_-43w";
+  const { q } = context.query;
   try {
     const { data } = await axios.get(
-      `https://www.googleapis.com/youtube/v3/playlists?part=snippet&channelId=${YOUTUBE_CHANNEL_ID}&key=${YOUTUBE_API_KEY}&maxResults=50`,
+      `https://www.googleapis.com/youtube/v3/playlists?part=snippet&channelId=${YOUTUBE_CHANNEL_ID}&key=${YOUTUBE_API_KEY}&maxResults=${
+        q ? "3" : "4"
+      }${q ? `&pageToken=${q}` : ""}`,
       {
         headers: {
           "Content-Type": "application/json",
@@ -64,9 +92,13 @@ export const getServerSideProps = async () => {
       }
     );
 
-    return { props: { data } };
+    return { props: { data, query: q || null } };
   } catch (error: any) {
-    console.log("error", error.response);
+    return {
+      props: {
+        error: error.response.data,
+      },
+    };
   }
 };
 

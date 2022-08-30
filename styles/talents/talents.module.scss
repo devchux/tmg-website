@@ -68,6 +68,13 @@
   }
 }
 
+.navButtons {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 3em 0;
+}
+
 .singleImage {
   position: relative;
   height: 350px;

@@ -5,11 +5,15 @@ const SubmitButton: FC<{
   children: ReactNode;
   className?: string;
   type?: "submit" | "button" | "reset" | undefined;
-}> = ({ children, type = "submit", className, ...rest }) => {
+  outlined?: boolean;
+  [rest: string]: any;
+}> = ({ children, type = "submit", className, outlined, ...rest }) => {
   return (
     <button
       type={type}
-      className={`${styles.submitButton} ${className || ""}`}
+      className={`${styles.submitButton} ${className || ""} ${
+        outlined ? styles.outlined : ""
+      }`}
       {...rest}
     >
       {children}
