@@ -10,7 +10,7 @@ const NihuMedia = ({ playlist }: { playlist: any[] }) => {
     <div className={styles.nihuMedia}>
       <div className={styles.top}>
         <Heading>N&apos;ihu Media</Heading>
-        <Link href="/">Learn More &gt;</Link>
+        <Link href="/media">Learn More &gt;</Link>
       </div>
       <div className={styles.sliderWrapper}>
         <Slider gap noCount>

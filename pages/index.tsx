@@ -29,7 +29,7 @@ export const getServerSideProps = async () => {
   const YOUTUBE_CHANNEL_ID = "UCUBxb9BTYO5I060A8A_-43w";
   try {
     const { data } = await axios.get(
-      `https://www.googleapis.com/youtube/v3/playlists?part=snippet&channelId=${YOUTUBE_CHANNEL_ID}&key=${YOUTUBE_API_KEY}&maxResults=50`,
+      `https://www.googleapis.com/youtube/v3/playlists?part=snippet&channelId=${YOUTUBE_CHANNEL_ID}&key=${YOUTUBE_API_KEY}&maxResults=9`,
       {
         headers: {
           "Content-Type": "application/json",

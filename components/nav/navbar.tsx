@@ -65,7 +65,7 @@ const Navbar = () => {
             </a>
           </Link>
 
-          <Link href="/">
+          <Link href="/media">
             <a style={{ transitionDelay: `${0.2 * 4}s` }} onClick={toggleMenu}>
               Entertainment and media
             </a>
