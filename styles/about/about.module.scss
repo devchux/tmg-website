@@ -9,7 +9,15 @@
   max-width: 1123px;
   margin: auto;
   gap: 60px;
-  padding: 125px 2em 55px 2em;
+  padding: 30px 1em 30px 1em;
+
+  @media only screen and (min-width: 768px) {
+    padding: 30px 2em 30px 2em;
+  }
+
+  @media only screen and (min-width: 1024px) {
+    padding: 125px 2em 55px 2em;
+  }
 }
 
 .headerContent {
@@ -76,7 +84,15 @@
 .mission {
   max-width: 1123px;
   margin: auto;
-  padding: 86px 2em 117px 2em;
+  padding: 30px 1em 30px 1em;
+
+  @media only screen and (min-width: 768px) {
+    padding: 30px 2em 30px 2em;
+  }
+
+  @media only screen and (min-width: 1024px) {
+    padding: 86px 2em 117px 2em;
+  }
 
   p {
     font-family: "Poppins";
@@ -123,7 +139,15 @@
   max-width: 1123px;
   margin: auto;
   gap: 60px;
-  padding: 125px 2em 55px 2em;
+  padding: 30px 1em 30px 1em;
+
+  @media only screen and (min-width: 768px) {
+    padding: 30px 2em 30px 2em;
+  }
+
+  @media only screen and (min-width: 1024px) {
+    padding: 125px 2em 55px 2em;
+  }
 }
 
 .board {
@@ -174,6 +198,7 @@
   align-items: center;
   gap: 30px;
   flex-wrap: wrap;
+  justify-content: center;
 }
 
 .teamMember {

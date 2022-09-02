@@ -52,7 +52,7 @@
   grid-template-columns: repeat(1, 1fr);
   gap: 40px;
   max-width: 1280px;
-  padding: 96px 2em;
+  padding: 40px 1em;
   margin: auto;
 
   @media only screen and (min-width: 500px) {
@@ -61,6 +61,11 @@
 
   @media only screen and (min-width: 768px) {
     grid-template-columns: repeat(3, 1fr);
+    padding: 40px 2em;
+  }
+
+  @media only screen and (min-width: 1024px) {
+    padding: 96px 2em;
   }
 
   > div {

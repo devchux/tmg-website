@@ -4,7 +4,11 @@
   > div {
     max-width: 1079px;
     text-align: center;
-    margin: 104px auto;
+    margin: 30px auto;
+
+    @media only screen and (min-width: 1024px) {
+      margin: 104px auto;
+    }
 
     p {
       font-family: "Poppins";
@@ -29,10 +33,19 @@
     font-family: "Poppins";
     font-style: normal;
     font-weight: 400;
-    font-size: 18px;
-    line-height: 33px;
-    margin-top: 26px;
+    font-size: 14px;
+    line-height: 20px;
+    margin-top: 16px;
     list-style-position: inside;
+
+    @media only screen and (min-width: 501px) {
+      font-size: 18px;
+      line-height: 33px;
+    }
+
+    @media only screen and (min-width: 768px) {
+      margin-top: 26px;
+    }
   }
 }
 

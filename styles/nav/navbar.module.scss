@@ -2,8 +2,12 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 18px 32px;
+  padding: 0 18px;
   border-bottom: 1px solid #979797;
+
+  @media only screen and (min-width: 550px) {
+    padding: 18px 32px;
+  }
 
   @media only screen and (min-width: 769px) {
     padding: 18px 65px;
@@ -58,7 +62,7 @@
   justify-content: center;
   max-width: 800px;
   text-align: center;
-  margin: 80px auto;
+  margin: 0 auto;
   padding: 0 2em;
 
   a {
@@ -85,8 +89,12 @@
   display: flex;
   align-items: center;
   justify-content: flex-end;
-  margin: 51px;
+  margin: 20px;
   cursor: pointer;
+
+  @media only screen and (min-width: 1024px) {
+    margin: 51px;
+  }
 }
 
 .show {
