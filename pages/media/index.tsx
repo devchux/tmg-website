@@ -42,6 +42,10 @@ const Media = ({
                     layout="fill"
                     src={item?.snippet?.thumbnails?.medium?.url}
                   />
+                  <div className={talentStyles.count}>
+                    <p>{item?.contentDetails?.itemCount}</p>
+                    <p>Video{item?.contentDetails?.itemCount > 1 && 's'}</p>
+                  </div>
                 </div>
                 <div className={talentStyles.singleText}>
                   <h5 className={talentStyles.singleTitle}>
@@ -82,7 +86,7 @@ export const getServerSideProps: GetServerSideProps = async (context) => {
   const { q } = context.query;
   try {
     const { data } = await axios.get(
-      `https://www.googleapis.com/youtube/v3/playlists?part=snippet&channelId=${YOUTUBE_CHANNEL_ID}&key=${YOUTUBE_API_KEY}&maxResults=${
+      `https://www.googleapis.com/youtube/v3/playlists?part=snippet,contentDetails&channelId=${YOUTUBE_CHANNEL_ID}&key=${YOUTUBE_API_KEY}&maxResults=${
         q ? "3" : "4"
       }${q ? `&pageToken=${q}` : ""}`,
       {

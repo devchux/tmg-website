@@ -24,7 +24,12 @@ const NihuMedia = ({ playlist }: { playlist: any[] }) => {
                       backgroundImage: `url(${data?.snippet?.thumbnails?.medium?.url})`,
                     }}
                     className={styles.singleMedia}
-                  ></div>
+                  >
+                    <div className={styles.count}>
+                      <p>{data?.contentDetails?.itemCount}</p>
+                      <p>Video{data?.contentDetails?.itemCount > 1 && "s"}</p>
+                    </div>
+                  </div>
                   <div className={styles.mediaDescription}>
                     <h6>{data?.snippet?.title}</h6>
                     <p>
