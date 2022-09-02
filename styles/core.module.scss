@@ -1,5 +1,9 @@
 .header {
-  padding: 0 2em;
+  padding: 0 1em;
+
+  @media only screen and (min-width: 768px) {
+    padding: 0 2em;
+  }
 
   > div {
     max-width: 1079px;

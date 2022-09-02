@@ -3,8 +3,12 @@
   gap: 78px;
   justify-content: center;
   flex-wrap: wrap;
-  padding: 0 2em;
   margin-bottom: 54px;
+  padding: 0 1em;
+
+  @media only screen and (min-width: 768px) {
+    padding: 0 2em;
+  }
 }
 
 .mapWrapper {

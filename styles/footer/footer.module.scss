@@ -1,7 +1,11 @@
 .footer {
   max-width: 1114px;
-  padding: 0 2em;
   margin: 62px auto;
+  padding: 0 1em;
+
+  @media only screen and (min-width: 768px) {
+    padding: 0 2em;
+  }
 
   @media only screen and (min-width: 1114px) {
     padding: 0;
