@@ -29,7 +29,7 @@ const Videos = ({ data, error }: any) => {
           <p>{video?.snippet?.description}</p>
         </div>
       </div>
-      <div>
+      <div className={styles.list}>
         <div>
           {data?.items?.length ? (
             data?.items?.map((item: any) => (
@@ -48,7 +48,7 @@ const Videos = ({ data, error }: any) => {
                   />
                   <b>&#9658;</b>
                 </div>
-                <div>
+                <div className={styles.videoDetail}>
                   <h6>{item?.snippet?.title}</h6>
                   <p>
                     {moment(item?.contentDetails?.videoPublishedAt)

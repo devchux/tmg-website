@@ -1,11 +1,18 @@
 .videos {
   display: flex;
+  flex-direction: column;
+  max-width: 2000px;
+  margin: auto;
   padding: 30px 1em;
   gap: 30px;
   justify-content: center;
 
   @media only screen and (min-width: 768px) {
     padding: 45px 2em;
+  }
+
+  @media only screen and (min-width: 944px) {
+    flex-direction: row;
   }
 
   > div {
@@ -16,7 +23,9 @@
 }
 
 .youtubeWrapper {
-  width: 80%;
+  @media only screen and (min-width: 944px) {
+    width: 60%;
+  }
   div {
     h5 {
       margin: 0.5em 0;
@@ -61,4 +70,14 @@
   b {
     display: inline;
   }
+}
+
+.list {
+  @media only screen and (min-width: 944px) {
+    width: 40%;
+  }
+}
+
+.videoDetail {
+    width: calc(100% - 100px);
 }
