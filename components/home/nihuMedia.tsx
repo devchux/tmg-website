@@ -2,10 +2,12 @@ import Slider from "components/slider";
 import SliderItem from "components/slider/sliderItem";
 import Heading from "components/typography/Heading";
 import Link from "next/link";
+import { useRouter } from "next/router";
 import React from "react";
 import styles from "styles/home/nihuMedia.module.scss";
 
 const NihuMedia = ({ playlist }: { playlist: any[] }) => {
+  const router = useRouter();
   return (
     <div className={styles.nihuMedia}>
       <div className={styles.top}>
@@ -24,6 +26,9 @@ const NihuMedia = ({ playlist }: { playlist: any[] }) => {
                       backgroundImage: `url(${data?.snippet?.thumbnails?.medium?.url})`,
                     }}
                     className={styles.singleMedia}
+                    onClick={() => {
+                      router.push(`media/videos/${data?.id}`);
+                    }}
                   >
                     <div className={styles.count}>
                       <p>{data?.contentDetails?.itemCount}</p>

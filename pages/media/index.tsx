@@ -33,7 +33,7 @@ const Media = ({
               <div
                 key={i}
                 onClick={() => {
-                  router.push(`media/${i + 1}`);
+                  router.push(`media/videos/${item?.id}`);
                 }}
               >
                 <div className={talentStyles.singleImage}>
