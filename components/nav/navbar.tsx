@@ -28,13 +28,15 @@ const Navbar = () => {
         className={`${styles.navbar} ${fixed ? styles.navbarFixed : ""}`}
       >
         <Link href="/">
-          <Image
-            src="/assets/images/logo.png"
-            alt="logo"
-            width="195"
-            height="84"
-            style={{ cursor: "pointer" }}
-          />
+          <a>
+            <Image
+              src="/assets/images/logo.png"
+              alt="logo"
+              width="195"
+              height="84"
+              style={{ cursor: "pointer" }}
+            />
+          </a>
         </Link>
         <button className={styles.menuButton} onClick={toggleMenu}>
           <i />

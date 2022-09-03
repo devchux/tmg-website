@@ -7,8 +7,15 @@ import Socialites from "components/home/socialites";
 import Partners from "components/home/partners";
 import Contact from "components/home/contact";
 import axios from "axios";
+import { useEffect } from "react";
+import { NotificationManager } from "react-notifications";
 
-const Home: NextPage = ({ playlistData }: any) => {
+const Home: NextPage = ({ playlistData, error }: any) => {
+  useEffect(() => {
+    if (error) {
+      NotificationManager.error(error.message, "Error!", 5000);
+    }
+  }, [error]);
   return (
     <div>
       <Header />
@@ -21,8 +28,6 @@ const Home: NextPage = ({ playlistData }: any) => {
     </div>
   );
 };
-
-
 
 export const getServerSideProps = async () => {
   const YOUTUBE_API_KEY = "AIzaSyDTw9T3ywBLK7J6NovmkcbqrvP7tB2b1dk";
@@ -39,7 +44,14 @@ export const getServerSideProps = async () => {
 
     return { props: { playlistData: data } };
   } catch (error: any) {
-    console.log("error", error.response);
+    return {
+      props: {
+        error: {
+          response: error.response.data,
+          message: "Playlists could not be fetched",
+        },
+      },
+    };
   }
 };
 

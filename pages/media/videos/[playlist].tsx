@@ -4,8 +4,9 @@ import moment from "moment";
 import { GetServerSideProps } from "next";
 import Image from "next/image";
 import { useRouter } from "next/router";
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import YouTube from "react-youtube";
+import { NotificationManager } from "react-notifications";
 import styles from "styles/media/videos.module.scss";
 
 const Videos = ({ data, error, playlist }: any) => {
@@ -19,6 +20,11 @@ const Videos = ({ data, error, playlist }: any) => {
       autoplay: 1,
     },
   };
+  useEffect(() => {
+    if (error) {
+      NotificationManager.error(error.message, "Error!", 5000);
+    }
+  }, [error]);
   return (
     <div className={styles.videos}>
       <div className={styles.youtubeWrapper}>
@@ -66,20 +72,24 @@ const Videos = ({ data, error, playlist }: any) => {
           )}
         </div>
         <div className={styles.navButtons}>
-          {data.prevPageToken && (
+          {data?.prevPageToken && (
             <SubmitButton
               outlined
               onClick={() =>
-                router.push(`/media/videos/${playlist}?q=${data.prevPageToken}`)
+                router.push(
+                  `/media/videos/${playlist}?q=${data?.prevPageToken}`
+                )
               }
             >
               Prev &lt;&lt;
             </SubmitButton>
           )}
-          {data.nextPageToken && (
+          {data?.nextPageToken && (
             <SubmitButton
               onClick={() =>
-                router.push(`/media/videos/${playlist}?q=${data.nextPageToken}`)
+                router.push(
+                  `/media/videos/${playlist}?q=${data?.nextPageToken}`
+                )
               }
             >
               Next &gt;&gt;
@@ -97,7 +107,7 @@ export const getServerSideProps: GetServerSideProps = async (context) => {
   const { q } = context.query;
   try {
     const { data } = await axios.get(
-      `https://www.googleapis.com/youtube/v3/playlistItems?part=snippet,contentDetails&playlistId=${playlist}&key=${YOUTUBE_API_KEY}&maxResults=3${
+      `https://www.googleapis.com/youtube/v3/playlistItems?part=snippet,contentDetails&playlistId=${playlist}&key=${YOUTUBE_API_KEY}&maxResults=10${
         q ? `&pageToken=${q}` : ""
       }`,
       {

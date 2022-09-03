@@ -4,18 +4,26 @@ import PageHeading from "components/typography/pageHeading";
 import { GetServerSideProps } from "next";
 import Image from "next/image";
 import { useRouter } from "next/router";
-import React from "react";
+import React, { useEffect } from "react";
+import { NotificationManager } from "react-notifications";
 import styles from "styles/core.module.scss";
 import talentStyles from "styles/talents/talents.module.scss";
 
 const Media = ({
   data,
   query,
+  error,
 }: {
   data: { items: any[]; nextPageToken?: string; prevPageToken?: string };
   query?: string;
+  error?: any;
 }) => {
   const router = useRouter();
+  useEffect(() => {
+    if (error) {
+      NotificationManager.error(error.message, "Error!", 5000);
+    }
+  }, [error]);
   return (
     <div>
       <div className={styles.wrapper}>
@@ -44,7 +52,7 @@ const Media = ({
                   />
                   <div className={talentStyles.count}>
                     <p>{item?.contentDetails?.itemCount}</p>
-                    <p>Video{item?.contentDetails?.itemCount > 1 && 's'}</p>
+                    <p>Video{item?.contentDetails?.itemCount > 1 && "s"}</p>
                   </div>
                 </div>
                 <div className={talentStyles.singleText}>
@@ -59,17 +67,17 @@ const Media = ({
             ))}
         </div>
         <div className={talentStyles.navButtons}>
-          {data.prevPageToken && (
+          {data?.prevPageToken && (
             <SubmitButton
               outlined
-              onClick={() => router.push(`/media?q=${data.prevPageToken}`)}
+              onClick={() => router.push(`/media?q=${data?.prevPageToken}`)}
             >
               Prev &lt;&lt;
             </SubmitButton>
           )}
-          {data.nextPageToken && (
+          {data?.nextPageToken && (
             <SubmitButton
-              onClick={() => router.push(`/media?q=${data.nextPageToken}`)}
+              onClick={() => router.push(`/media?q=${data?.nextPageToken}`)}
             >
               Next &gt;&gt;
             </SubmitButton>
@@ -87,7 +95,7 @@ export const getServerSideProps: GetServerSideProps = async (context) => {
   try {
     const { data } = await axios.get(
       `https://www.googleapis.com/youtube/v3/playlists?part=snippet,contentDetails&channelId=${YOUTUBE_CHANNEL_ID}&key=${YOUTUBE_API_KEY}&maxResults=${
-        q ? "3" : "4"
+        q ? "9" : "10"
       }${q ? `&pageToken=${q}` : ""}`,
       {
         headers: {
@@ -100,7 +108,10 @@ export const getServerSideProps: GetServerSideProps = async (context) => {
   } catch (error: any) {
     return {
       props: {
-        error: error.response.data,
+        error: {
+          response: error.response.data,
+          message: "Playlists could not be fetched",
+        },
       },
     };
   }
