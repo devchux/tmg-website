@@ -1,13 +1,16 @@
 import axios from "axios";
+import SubmitButton from "components/buttons/submitButton";
 import moment from "moment";
 import { GetServerSideProps } from "next";
 import Image from "next/image";
+import { useRouter } from "next/router";
 import React, { useState } from "react";
 import YouTube from "react-youtube";
 import styles from "styles/media/videos.module.scss";
 
-const Videos = ({ data, error }: any) => {
+const Videos = ({ data, error, playlist }: any) => {
   const [video, setVideo] = useState(data?.items[0]);
+  const router = useRouter();
   const opts = {
     height: "500px",
     width: "100%",
@@ -30,7 +33,7 @@ const Videos = ({ data, error }: any) => {
         </div>
       </div>
       <div className={styles.list}>
-        <div>
+        <div className={styles.videoList}>
           {data?.items?.length ? (
             data?.items?.map((item: any) => (
               <div
@@ -62,7 +65,27 @@ const Videos = ({ data, error }: any) => {
             <p>No videos found.</p>
           )}
         </div>
-        <div></div>
+        <div className={styles.navButtons}>
+          {data.prevPageToken && (
+            <SubmitButton
+              outlined
+              onClick={() =>
+                router.push(`/media/videos/${playlist}?q=${data.prevPageToken}`)
+              }
+            >
+              Prev &lt;&lt;
+            </SubmitButton>
+          )}
+          {data.nextPageToken && (
+            <SubmitButton
+              onClick={() =>
+                router.push(`/media/videos/${playlist}?q=${data.nextPageToken}`)
+              }
+            >
+              Next &gt;&gt;
+            </SubmitButton>
+          )}
+        </div>
       </div>
     </div>
   );
@@ -71,9 +94,12 @@ const Videos = ({ data, error }: any) => {
 export const getServerSideProps: GetServerSideProps = async (context) => {
   const YOUTUBE_API_KEY = "AIzaSyDTw9T3ywBLK7J6NovmkcbqrvP7tB2b1dk";
   const { playlist } = context.params || { playlist: null };
+  const { q } = context.query;
   try {
     const { data } = await axios.get(
-      `https://www.googleapis.com/youtube/v3/playlistItems?part=snippet,contentDetails&playlistId=${playlist}&key=${YOUTUBE_API_KEY}&maxResults=50`,
+      `https://www.googleapis.com/youtube/v3/playlistItems?part=snippet,contentDetails&playlistId=${playlist}&key=${YOUTUBE_API_KEY}&maxResults=3${
+        q ? `&pageToken=${q}` : ""
+      }`,
       {
         headers: {
           "Content-Type": "application/json",
@@ -81,7 +107,7 @@ export const getServerSideProps: GetServerSideProps = async (context) => {
       }
     );
 
-    return { props: { data } };
+    return { props: { data, playlist } };
   } catch (error: any) {
     return {
       props: {

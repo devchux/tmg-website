@@ -78,6 +78,17 @@
   }
 }
 
+.videoList {
+    border: 1px solid #343434;
+}
+
 .videoDetail {
     width: calc(100% - 100px);
 }
+
+.navButtons {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 3em 0;
+  }
