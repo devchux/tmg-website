@@ -27,7 +27,7 @@ const NihuMedia = ({ playlist }: { playlist: any[] }) => {
                     }}
                     className={styles.singleMedia}
                     onClick={() => {
-                      router.push(`media/videos/${data?.id}`);
+                      router.push(`/media/videos/${data?.id}`);
                     }}
                   >
                     <div className={styles.count}>
@@ -48,7 +48,7 @@ const NihuMedia = ({ playlist }: { playlist: any[] }) => {
         </Slider>
       </div>
       <div className={styles.mobileLink}>
-        <Link href="/">Learn More &gt;</Link>
+        <Link href="/media">Learn More &gt;</Link>
       </div>
     </div>
   );

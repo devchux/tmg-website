@@ -33,7 +33,7 @@ const Media = ({
               <div
                 key={i}
                 onClick={() => {
-                  router.push(`media/videos/${item?.id}`);
+                  router.push(`/media/videos/${item?.id}`);
                 }}
               >
                 <div className={talentStyles.singleImage}>
@@ -62,14 +62,14 @@ const Media = ({
           {data.prevPageToken && (
             <SubmitButton
               outlined
-              onClick={() => router.push(`media?q=${data.prevPageToken}`)}
+              onClick={() => router.push(`/media?q=${data.prevPageToken}`)}
             >
               Prev &lt;&lt;
             </SubmitButton>
           )}
           {data.nextPageToken && (
             <SubmitButton
-              onClick={() => router.push(`media?q=${data.nextPageToken}`)}
+              onClick={() => router.push(`/media?q=${data.nextPageToken}`)}
             >
               Next &gt;&gt;
             </SubmitButton>

@@ -78,7 +78,7 @@ const Events = () => {
             <div
               key={i}
               onClick={() => {
-                router.push(`events/${i + 1}`)
+                router.push(`/events/${i + 1}`)
               }}
             >
               <div className={talentStyles.singleImage}>
