@@ -12,10 +12,14 @@ const NihuMedia = ({ playlist }: { playlist: any[] }) => {
   return (
     <div className={styles.nihuMedia}>
       <div className={styles.top}>
-        <Heading>
-          {/* <Image src="/assets/images/Icon_TRS.png" alt="" width="100" height="50" />{" "} */}
-          N&apos;ihu Media
-        </Heading>
+        <Link href="/media">
+          <a>
+            <Heading>
+              {/* <Image src="/assets/images/Icon_TRS.png" alt="" width="100" height="50" />{" "} */}
+              N&apos;ihu Media
+            </Heading>
+          </a>
+        </Link>
         <Link href="/media">Learn More &gt;</Link>
       </div>
       <div className={styles.sliderWrapper}>
