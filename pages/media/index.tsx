@@ -110,31 +110,92 @@ const Nihu = ({
 
 const Corporate = () => {
   return (
-    <div className={styles.wrapper}>
-      <div className={talentStyles.list}>
-        {Array(9)
-          .fill(null)
-          .map((item: any, i: number) => (
-            <div key={i} onClick={() => {}}>
-              <div className={talentStyles.singleImage}>
-                {/* eslint-disable-next-line jsx-a11y/alt-text */}
-                <Image
-                  layout="fill"
-                  src="/assets/images/talent-management.png"
-                />
-                <div className={talentStyles.count}>
-                  <p>40</p>
-                  <p>Videos</p>
+    <div>
+      <div className={styles.wrapper}>
+        <div className={styles.header}>
+          <div>
+            <h4>Corporate Productions</h4>
+            <p>
+              We create captivating videos for TV commercials, corporate and
+              viral content with cinematic visuals and catchy storylines.
+            </p>
+          </div>
+        </div>
+      </div>
+      <div className={styles.wrapper}>
+        <div className={talentStyles.list}>
+          {Array(9)
+            .fill(null)
+            .map((item: any, i: number) => (
+              <div key={i} onClick={() => {}}>
+                <div className={talentStyles.singleImage}>
+                  {/* eslint-disable-next-line jsx-a11y/alt-text */}
+                  <Image
+                    layout="fill"
+                    src="/assets/images/talent-management.png"
+                  />
+                  <div className={talentStyles.count}>
+                    <p>40</p>
+                    <p>Videos</p>
+                  </div>
+                </div>
+                <div className={talentStyles.singleText}>
+                  <h5 className={talentStyles.singleTitle}>Test</h5>
+                  <h6 className={talentStyles.singlePosition}>
+                    Just Testing 123
+                  </h6>
                 </div>
               </div>
-              <div className={talentStyles.singleText}>
-                <h5 className={talentStyles.singleTitle}>Test</h5>
-                <h6 className={talentStyles.singlePosition}>
-                  Just Testing 123
-                </h6>
+            ))}
+        </div>
+      </div>
+    </div>
+  );
+};
+
+const Production = () => {
+  return (
+    <div>
+      <div className={styles.wrapper}>
+        <div className={styles.header}>
+          <div>
+            <h4>Production Services</h4>
+            <p>
+              Our exceptionally skilled team use modern filmmaking techniques to
+              deliver stunning visuals for a variety of productions including
+              film, documentaries, interview series, music videos and
+              photography. Additional services include concept development,
+              script writing, casting and location scouting.
+            </p>
+          </div>
+        </div>
+      </div>
+      <div className={styles.wrapper}>
+        <div className={talentStyles.list}>
+          {Array(9)
+            .fill(null)
+            .map((item: any, i: number) => (
+              <div key={i} onClick={() => {}}>
+                <div className={talentStyles.singleImage}>
+                  {/* eslint-disable-next-line jsx-a11y/alt-text */}
+                  <Image
+                    layout="fill"
+                    src="/assets/images/talent-management.png"
+                  />
+                  <div className={talentStyles.count}>
+                    <p>40</p>
+                    <p>Videos</p>
+                  </div>
+                </div>
+                <div className={talentStyles.singleText}>
+                  <h5 className={talentStyles.singleTitle}>Test</h5>
+                  <h6 className={talentStyles.singlePosition}>
+                    Just Testing 123
+                  </h6>
+                </div>
               </div>
-            </div>
-          ))}
+            ))}
+        </div>
       </div>
     </div>
   );
@@ -160,7 +221,7 @@ const Media = ({
   const service: any = {
     nihu: Nihu,
     corporate: Corporate,
-    production: Corporate,
+    production: Production,
   };
 
   const Component = service[state];
