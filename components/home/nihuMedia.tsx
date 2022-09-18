@@ -1,6 +1,7 @@
 import Slider from "components/slider";
 import SliderItem from "components/slider/sliderItem";
 import Heading from "components/typography/Heading";
+import Image from "next/image";
 import Link from "next/link";
 import { useRouter } from "next/router";
 import React from "react";
@@ -11,7 +12,10 @@ const NihuMedia = ({ playlist }: { playlist: any[] }) => {
   return (
     <div className={styles.nihuMedia}>
       <div className={styles.top}>
-        <Heading>N&apos;ihu Media</Heading>
+        <Heading>
+          {/* <Image src="/assets/images/Icon_TRS.png" alt="" width="100" height="50" />{" "} */}
+          N&apos;ihu Media
+        </Heading>
         <Link href="/media">Learn More &gt;</Link>
       </div>
       <div className={styles.sliderWrapper}>
@@ -23,7 +27,7 @@ const NihuMedia = ({ playlist }: { playlist: any[] }) => {
                 <SliderItem key={i}>
                   <div
                     style={{
-                      backgroundImage: `url(${data?.snippet?.thumbnails?.medium?.url})`,
+                      backgroundImage: `url(${data?.snippet?.thumbnails?.high?.url})`,
                     }}
                     className={styles.singleMedia}
                     onClick={() => {

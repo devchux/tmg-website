@@ -6,7 +6,7 @@ import styles from "styles/core.module.scss";
 import talentStyles from "styles/talents/talents.module.scss";
 
 const Events = () => {
-    const router = useRouter();
+  const router = useRouter();
   const data = [
     {
       image: ["/assets/images/service1.png", "/assets/images/service2.png"],
@@ -78,7 +78,7 @@ const Events = () => {
             <div
               key={i}
               onClick={() => {
-                router.push(`/events/${i + 1}`)
+                router.push(`/events/${i + 1}`);
               }}
             >
               <div className={talentStyles.singleImage}>

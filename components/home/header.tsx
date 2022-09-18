@@ -16,7 +16,7 @@ const Header = () => {
               Managment <br /> services
             </>
           }
-          source="/assets/images/service1.png"
+          source="/assets/images/talent-management.png"
           onClick={() => router.push("/talents")}
         />
         <HeaderService
@@ -25,12 +25,12 @@ const Header = () => {
               Entertainment <br /> and media
             </>
           }
-          source="/assets/images/service2.png"
+          source="/assets/images/entertainment.png"
           onClick={() => router.push("/media")}
         />
         <HeaderService
           title="Events"
-          source="/assets/images/service3.png"
+          source="/assets/images/events.png"
           onClick={() => router.push("/events")}
         />
       </div>
@@ -38,31 +38,21 @@ const Header = () => {
         <Carousel>
           <CarouselItem>
             <div className={styles.headerCarouselContent}>
-              <h3>Strategic Consulting 1</h3>
-              <p>
-                Our talent pool of pros and skilled creatives originate,
-                develop, and produce concepts, themes, content, branded
-                products, experiences and events.
-              </p>
+              <h3>Strategic Consulting</h3>
+              <p>Tailored strategic plans with effective implementation</p>
             </div>
           </CarouselItem>
           <CarouselItem>
             <div className={styles.headerCarouselContent}>
-              <h3>Strategic Consulting 2</h3>
-              <p>
-                Our talent pool of pros and skilled creatives originate,
-                develop, and produce concepts, themes, content, branded
-                products, experiences and events.
-              </p>
+              <h3>Creative Content</h3>
+              <p>Stunning visuals that accentuate profound storytelling</p>
             </div>
           </CarouselItem>
           <CarouselItem>
             <div className={styles.headerCarouselContent}>
-              <h3>Strategic Consulting 3</h3>
+              <h3>Creative Partnerships</h3>
               <p>
-                Our talent pool of pros and skilled creatives originate,
-                develop, and produce concepts, themes, content, branded
-                products, experiences and events.
+                Identify talents and brands for mutually beneficial campaigns
               </p>
             </div>
           </CarouselItem>

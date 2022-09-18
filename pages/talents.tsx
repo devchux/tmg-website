@@ -104,7 +104,7 @@ const Talents = () => {
               <Slider smallArrow noCount>
                 {content.image.map((image, i) => (
                   <SliderItem key={i}>
-                  {/* eslint-disable-next-line jsx-a11y/alt-text */}
+                    {/* eslint-disable-next-line jsx-a11y/alt-text */}
                     <Image src={image} />
                   </SliderItem>
                 ))}

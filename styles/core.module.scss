@@ -15,7 +15,7 @@
     }
 
     p {
-      font-family: "Poppins";
+      font-family: "aeonik-regular";
       font-style: normal;
       font-weight: 400;
       margin-top: 26px;
@@ -34,7 +34,7 @@
 
   li {
     color: #fff;
-    font-family: "Poppins";
+    font-family: "aeonik-regular";
     font-style: normal;
     font-weight: 400;
     font-size: 14px;
@@ -55,4 +55,27 @@
 
 .wrapper {
   border-bottom: 1px solid #979797;
+}
+
+.tabs {
+  display: flex;
+  gap: 27px;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  margin: 40px;
+
+  button {
+    display: none;
+    @media only screen and (min-width: 768px) {
+      display: inline;
+    }
+  }
+
+  select {
+    display: inline;
+    @media only screen and (min-width: 768px) {
+      display: none;
+    }
+  }
 }

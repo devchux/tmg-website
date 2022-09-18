@@ -16,7 +16,7 @@ const Services = () => {
             <div>
               <div>
                 <Heading>
-                  Talent <br /> managment 1
+                  Talent <br /> managment
                 </Heading>
                 <p>
                   We Cultivate a global network to support outstanding
@@ -40,12 +40,11 @@ const Services = () => {
             <div>
               <div>
                 <Heading>
-                  Talent <br /> managment 2
+                  Talent <br /> managment
                 </Heading>
                 <p>
-                  We Cultivate a global network to support outstanding
-                  creatives, focusing on career development and business
-                  partnerships
+                  Full-Service Management, Strategic Consulting, Creative
+                  Partnerships.
                 </p>
                 <Button>LEARN MORE</Button>
               </div>
