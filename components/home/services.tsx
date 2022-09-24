@@ -40,7 +40,7 @@ const Services = () => {
             <div>
               <div>
                 <Heading>
-                  Talent <br /> managment
+                  Strategic <br /> partnerships
                 </Heading>
                 <p>
                   Full-Service Management, Strategic Consulting, Creative

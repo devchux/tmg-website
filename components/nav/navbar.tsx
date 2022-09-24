@@ -79,13 +79,13 @@ const Navbar = () => {
             </a>
           </Link>
 
-          <Link href="/">
+          {/* <Link href="/">
             <a style={{ transitionDelay: `${0.2 * 6}s` }} onClick={toggleMenu}>
               blog
             </a>
-          </Link>
+          </Link> */}
 
-          <Link href="/">
+          <Link href="/contact">
             <a style={{ transitionDelay: `${0.2 * 7}s` }} onClick={toggleMenu}>
               Contact us
             </a>

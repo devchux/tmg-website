@@ -1,34 +1,46 @@
 .socialites {
-    display: flex;
+  display: flex;
+  flex-wrap: wrap;
 }
 
 .socialite {
-    flex-grow: 1;
-    flex-basis: 0;
-    height: 276px;
-    overflow: hidden;
-    position: relative;
-    cursor: pointer;
+  width: 50%;
+  height: 276px;
+  overflow: hidden;
+  position: relative;
+  cursor: pointer;
 
-    > span {
-        z-index: 0;
-    }
+  @media only screen and (min-width: 680px) {
+    width: calc(100% / 3);
+  }
 
+  @media only screen and (min-width: 768px) {
+    width: 25%;
+  }
+
+  @media only screen and (min-width: 1024px) {
+    width: 20%;
+  }
+
+  > span {
+    z-index: 0;
+  }
+
+  > div {
+    position: absolute;
+    background-color: rgba(#000000, 0.2);
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+  }
+
+  &:hover {
     > div {
-        position: absolute;
-        background-color: rgba(#000000, 0.2);
-        width: 100%;
-        height: 100%;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        opacity: 0;
+      opacity: 1;
+      transition: all 0.5s ease;
     }
-
-    &:hover {
-        > div {
-            opacity: 1;
-            transition: all 0.5s ease;
-        }
-    }
+  }
 }

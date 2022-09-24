@@ -60,7 +60,7 @@ const Talents = () => {
       <div className={styles.wrapper}>
         <div className={styles.header}>
           <div>
-            <PageHeading>Talent MANAGMENT</PageHeading>
+            <PageHeading className={styles.colorRed}>Talent MANAGEMENT</PageHeading>
             <p>
               Management services for the creative industries; art, media and
               lifestyle. We design and implement exclusive strategies for

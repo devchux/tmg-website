@@ -4,36 +4,18 @@ import { ReactSVG } from "react-svg";
 import Link from "next/link";
 import styles from "styles/home/socialites.module.scss";
 
-const Socialites = () => {
-  const data = [
-    {
-      image: "/assets/images/service1.png",
-      instaLink: "/",
-    },
-    {
-      image: "/assets/images/service2.png",
-      instaLink: "/",
-    },
-    {
-      image: "/assets/images/service3.png",
-      instaLink: "/",
-    },
-    {
-      image: "/assets/images/service1.png",
-      instaLink: "/",
-    },
-    {
-      image: "/assets/images/service2.png",
-      instaLink: "/",
-    },
-  ];
+const Socialites = ({
+  data,
+}: {
+  data: { id: string; caption: string; media_url: string; permalink: string }[];
+}) => {
   return (
     <div className={styles.socialites}>
-      {data.map(({ image, instaLink }, key) => {
+      {data.slice(0, 10).map(({ id, media_url, permalink }) => {
         return (
-          <Link href={instaLink} key={key}>
+          <Link target="_blank" href={permalink} key={id}>
             <div className={styles.socialite}>
-              <Image src={image} layout="fill" alt="" />
+              <Image src={media_url} layout="fill" alt="" />
               <div>
                 <ReactSVG src="/assets/svg/insta.svg" />
               </div>

@@ -2,15 +2,15 @@ import type { NextPage } from "next";
 import Header from "components/home/header";
 import Services from "components/home/services";
 import NihuMedia from "components/home/nihuMedia";
-import TrendingTopics from "components/home/trendingTopics";
+// import TrendingTopics from "components/home/trendingTopics";
 import Socialites from "components/home/socialites";
 import Partners from "components/home/partners";
-import Contact from "components/home/contact";
+// import Contact from "components/home/contact";
 import axios from "axios";
 import { useEffect } from "react";
 import { NotificationManager } from "react-notifications";
 
-const Home: NextPage = ({ playlistData, error }: any) => {
+const Home: NextPage = ({ playlistData, error, instaMedia }: any) => {
   useEffect(() => {
     if (error) {
       NotificationManager.error(error.message, "Error!", 5000);
@@ -21,10 +21,10 @@ const Home: NextPage = ({ playlistData, error }: any) => {
       <Header />
       <Services />
       <NihuMedia playlist={playlistData?.items} />
-      <TrendingTopics />
-      <Socialites />
+      {/* <TrendingTopics /> */}
+      <Socialites data={instaMedia?.data} />
       <Partners />
-      <Contact />
+      {/* <Contact /> */}
     </div>
   );
 };
@@ -42,7 +42,11 @@ export const getServerSideProps = async () => {
       }
     );
 
-    return { props: { playlistData: data } };
+    const { data: instaMedia } = await axios.get(
+      `https://graph.instagram.com/me/media?fields=id,caption,media_url,permalink&access_token=IGQVJWV2JQeGdhanNSSmxTU0VCOVRXUGxOSmRRaDBwUFpYODRjSDk5Q2pDUVdpZADRDajRIN1ZAOai1pb25UTnBjZAmVoOGRoNEd4S0JrdmV3SENUb2RYY2g3QnFma1ZAPSl8yVHpIc1NFRWRZAdWRydUUxbQZDZD`
+    );
+
+    return { props: { playlistData: data, instaMedia } };
   } catch (error: any) {
     return {
       props: {

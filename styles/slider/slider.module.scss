@@ -40,20 +40,12 @@
 }
 
 .leftArrow {
-  left: 30px;
+  left: 10px;
   transform: rotate(-180deg) translateY(50%);
-
-  @media only screen and (min-width: 768px) {
-    left: 68px;
-  }
 }
 
 .rightArrow {
-  right: 30px;
-
-  @media only screen and (min-width: 768px) {
-    right: 68px;
-  }
+  right: 10px;
 }
 
 .sliderItemWrapper {

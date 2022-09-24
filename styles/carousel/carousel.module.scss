@@ -45,7 +45,7 @@
   flex-grow: 1;
   flex-basis: 0;
   height: 100%;
-//   transition: all 0.5s linear;
+  transition: all 0.5s linear;
 }
 
 .carouselItem {
@@ -55,11 +55,11 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  opacity: 0;
+  // opacity: 0;
   transition: all 2s linear;
 }
 
 .active {
-    opacity: 1;
+    // opacity: 1;
     transition: all 1.3s linear;
 }

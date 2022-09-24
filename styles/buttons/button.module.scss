@@ -37,7 +37,7 @@
     height: 200%;
     left: -10%;
     top: 100%;
-    background: #e24c36;
+    background: #e9483b;
     border-radius: 50%;
     z-index: 0;
     transition: all 0.3s linear;
@@ -66,7 +66,7 @@
   text-align: center;
   letter-spacing: 1px;
   text-transform: uppercase;
-  color: #e24c36;
+  color: #e9483b;
   background: #ffffff;
   border-radius: 6px;
   padding-left: 30px;
@@ -75,11 +75,11 @@
 
   &:hover {
     color: #ffffff;
-    background: #e24c36;
+    background: #e9483b;
   }
 }
 
 .secondaryCustomButtonActive {
   color: #ffffff;
-  background: #e24c36;
+  background: #e9483b;
 }
