@@ -280,7 +280,7 @@ const Media = ({
 };
 
 export const getServerSideProps: GetServerSideProps = async (context) => {
-  const YOUTUBE_API_KEY = "AIzaSyDTw9T3ywBLK7J6NovmkcbqrvP7tB2b1dk";
+  const YOUTUBE_API_KEY = process.env.YOUTUBE_TOKEN;
   const YOUTUBE_CHANNEL_ID = "UCUBxb9BTYO5I060A8A_-43w";
   const { q } = context.query;
   try {

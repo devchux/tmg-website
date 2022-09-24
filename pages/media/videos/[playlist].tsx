@@ -114,7 +114,7 @@ const Videos = ({ data, error, playlist, playlistData }: any) => {
 };
 
 export const getServerSideProps: GetServerSideProps = async (context) => {
-  const YOUTUBE_API_KEY = "AIzaSyDTw9T3ywBLK7J6NovmkcbqrvP7tB2b1dk";
+  const YOUTUBE_API_KEY = process.env.YOUTUBE_TOKEN;
   const { playlist } = context.params || { playlist: null };
   const { q } = context.query;
   try {

@@ -30,7 +30,7 @@ const Home: NextPage = ({ playlistData, error, instaMedia }: any) => {
 };
 
 export const getServerSideProps = async () => {
-  const YOUTUBE_API_KEY = "AIzaSyDTw9T3ywBLK7J6NovmkcbqrvP7tB2b1dk";
+  const YOUTUBE_API_KEY = process.env.YOUTUBE_TOKEN;
   const YOUTUBE_CHANNEL_ID = "UCUBxb9BTYO5I060A8A_-43w";
   try {
     const { data } = await axios.get(
@@ -43,7 +43,7 @@ export const getServerSideProps = async () => {
     );
 
     const { data: instaMedia } = await axios.get(
-      `https://graph.instagram.com/me/media?fields=id,caption,media_url,permalink&access_token=IGQVJWV2JQeGdhanNSSmxTU0VCOVRXUGxOSmRRaDBwUFpYODRjSDk5Q2pDUVdpZADRDajRIN1ZAOai1pb25UTnBjZAmVoOGRoNEd4S0JrdmV3SENUb2RYY2g3QnFma1ZAPSl8yVHpIc1NFRWRZAdWRydUUxbQZDZD`
+      `https://graph.instagram.com/me/media?fields=id,caption,media_url,permalink&access_token=${process.env.FB_TOKEN}`
     );
 
     return { props: { playlistData: data, instaMedia } };
