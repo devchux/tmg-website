@@ -230,7 +230,9 @@ const Media = ({
       <div className={styles.wrapper}>
         <div className={styles.header}>
           <div>
-            <PageHeading>Entertainment and media</PageHeading>
+            <PageHeading className={styles.colorRed}>
+              Entertainment and media
+            </PageHeading>
             <p>
               Our talent pool of pros and skilled creatives originate, develop,
               and produce concepts, themes, content, branded products,

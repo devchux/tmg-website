@@ -2,6 +2,7 @@ import Image from "components/images/image";
 import PageHeading from "components/typography/pageHeading";
 import { useRouter } from "next/router";
 import React from "react";
+import NextImage from "next/image";
 import styles from "styles/core.module.scss";
 import talentStyles from "styles/talents/talents.module.scss";
 
@@ -47,27 +48,79 @@ const Events = () => {
       <div className={styles.wrapper}>
         <div className={styles.header}>
           <div>
-            <PageHeading>Events</PageHeading>
+            <PageHeading className={styles.colorRed}>Events</PageHeading>
             <p>
               We deliver an innovative touch to events, through our network of
               highly experienced and skilled partners. Our services include Full
-              event logistics, Planning, Management and implementation.
+              Event Logistics, Planning, Management and Implementation.
             </p>
-            <div className={styles.headerList}>
-              <p>Our Event Producers provide the following:</p>
-              <ul>
-                <li>Concept development and Budgeting</li>
-                <li>Guest list managment</li>
-                <li>Security management</li>
-              </ul>
+          </div>
+        </div>
+      </div>
+      <div className={styles.wrapper}>
+        <div className={styles.headerListWrapper}>
+          <div className={styles.headerList}>
+            <p>Our Event Producers provide the following:</p>
+            <div>
+              <p>
+                <NextImage
+                  src="/assets/svg/flower.svg"
+                  alt=""
+                  width="24"
+                  height="24"
+                />
+                Concept development and Budgeting
+              </p>
+              <p>
+                <NextImage
+                  src="/assets/svg/flower.svg"
+                  alt=""
+                  width="24"
+                  height="24"
+                />
+                Guest list managment
+              </p>
+              <p>
+                <NextImage
+                  src="/assets/svg/flower.svg"
+                  alt=""
+                  width="24"
+                  height="24"
+                />
+                Security management
+              </p>
             </div>
-            <div className={styles.headerList}>
-              <p>Our Event Managers provide:</p>
-              <ul>
-                <li>Execute agreed plans by managing staff</li>
-                <li>Finances</li>
-                <li>Vendor relationships and more</li>
-              </ul>
+          </div>
+          <div className={styles.headerList}>
+            <p>Our Event Managers provide:</p>
+            <div>
+              <p>
+                <NextImage
+                  src="/assets/svg/flower.svg"
+                  alt=""
+                  width="24"
+                  height="24"
+                />
+                Execute agreed plans by managing staff
+              </p>
+              <p>
+                <NextImage
+                  src="/assets/svg/flower.svg"
+                  alt=""
+                  width="24"
+                  height="24"
+                />
+                Finances
+              </p>
+              <p>
+                <NextImage
+                  src="/assets/svg/flower.svg"
+                  alt=""
+                  width="24"
+                  height="24"
+                />
+                Vendor relationships and more
+              </p>
             </div>
           </div>
         </div>

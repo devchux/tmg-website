@@ -7,7 +7,7 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 42px 1em 42px 1em;
+  padding: 20px 1em 20px 1em;
 
   @media only screen and (min-width: 768px) {
     padding: 42px 56px 42px 106px;
@@ -15,18 +15,21 @@
 
   a {
     text-decoration: none;
-    font-family: "aeonik-regular";
-    font-style: normal;
-    font-weight: 400;
-    font-size: 20px;
-    line-height: 0px;
-    letter-spacing: 3.625px;
-    text-transform: uppercase;
-    color: #ffffff;
-    display: none;
+  
+    &:last-child {
+      font-family: "aeonik-regular";
+      font-style: normal;
+      font-weight: 400;
+      font-size: 20px;
+      line-height: 0px;
+      letter-spacing: 3.625px;
+      text-transform: uppercase;
+      color: #ffffff;
+      display: none;
 
-    @media only screen and (min-width: 768px) {
-      display: inline;
+      @media only screen and (min-width: 768px) {
+        display: inline;
+      }
     }
   }
 }
@@ -91,11 +94,9 @@
     color: #ffffff;
     border: 2px solid #ffffff;
     height: 40px;
-
   }
 
   @media only screen and (min-width: 768px) {
     display: none;
   }
-
 }

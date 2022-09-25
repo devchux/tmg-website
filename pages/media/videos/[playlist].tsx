@@ -32,7 +32,7 @@ const Videos = ({ data, error, playlist, playlistData }: any) => {
       <div className={coreStyles.wrapper}>
         <div className={coreStyles.header}>
           <div>
-            <PageHeading>{playlistData?.title}</PageHeading>
+            <PageHeading className={coreStyles.colorRed}>{playlistData?.title}</PageHeading>
             <p>{playlistData?.description}</p>
           </div>
         </div>

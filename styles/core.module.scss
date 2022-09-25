@@ -23,16 +23,24 @@
   }
 }
 
+.headerListWrapper {
+  max-width: 1024px;
+  padding: 2em 2em 4em 2em;
+  margin: auto;
+  display: flex;
+  justify-content: space-between;
+}
+
 .headerList {
   text-align: left;
   margin-top: 2em;
 
-  @media only screen and (min-width: 768px) {
-    display: inline-block;
-    width: 50%;
-  }
+  // @media only screen and (min-width: 768px) {
+  //   display: inline-block;
+  //   width: 50%;
+  // }
 
-  li {
+  p {
     color: #fff;
     font-family: "aeonik-regular";
     font-style: normal;
@@ -40,7 +48,9 @@
     font-size: 14px;
     line-height: 20px;
     margin-top: 16px;
-    list-style-position: inside;
+    display: flex;
+    align-items: center;
+    gap: 8px;
 
     @media only screen and (min-width: 501px) {
       font-size: 18px;
