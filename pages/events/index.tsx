@@ -26,9 +26,9 @@ const Events = () => {
   });
   const data = [
     {
-      image: ["/assets/images/service1.png", "/assets/images/service2.png"],
-      name: "Adenike Aderonke",
-      position: "Actor",
+      image: ["/assets/images/events/ladipo/1.jpg", "/assets/images/events/ladipo/2.jpg"],
+      name: "Ladipo Exhibition",
+      position: "Exhibition",
       description: `Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
       eiusmod tempor incididunt ut labore et dolore magna aliqua. Quis
       ipsum suspendisse ultrices gravida. Risus commodo viverra
