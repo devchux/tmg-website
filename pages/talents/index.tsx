@@ -27,7 +27,13 @@ const Talents = () => {
   const router = useRouter();
   const data = [
     {
-      image: ["/assets/images/service1.png", "/assets/images/service2.png"],
+      image: [
+        "/assets/images/artist/1.jpg",
+        "/assets/images/artist/2.jpeg",
+        "/assets/images/artist/3.jpeg",
+        "/assets/images/artist/4.jpeg",
+        "/assets/images/artist/5.jpg",
+      ],
       name: "Adenike Aderonke",
       position: "Actor",
       description: `Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
@@ -38,7 +44,11 @@ const Talents = () => {
       ipsum suspendisse ultrices gravida. Risus commodo .`,
     },
     {
-      image: ["/assets/images/service3.png", "/assets/images/service2.png"],
+      image: [
+        "/assets/images/sffl/1.png",
+        "/assets/images/sffl/2.jpg",
+        "/assets/images/sffl/3.jpg",
+      ],
       name: "Eze Chukwudi",
       position: "Actor",
       description: `Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
@@ -83,7 +93,7 @@ const Talents = () => {
             <div
               key={i}
               onClick={() => {
-                setContent({...item, id: i});
+                setContent({ ...item, id: i });
                 setIsOpen(true);
               }}
             >
@@ -108,7 +118,7 @@ const Talents = () => {
                 <Image src={content.image[0]} />
               </>
             ) : (
-              <Slider smallArrow noCount>
+              <Slider smallArrow autoFlow={false} noCount>
                 {content.image.map((image, i) => (
                   <SliderItem key={i}>
                     {/* eslint-disable-next-line jsx-a11y/alt-text */}

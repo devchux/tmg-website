@@ -16,7 +16,14 @@ const Slider: FC<{
   gap?: boolean;
   noCount?: boolean;
   smallArrow?: boolean;
-}> = ({ children, gap, noCount = false, smallArrow = false }) => {
+  autoFlow?: boolean;
+}> = ({
+  children,
+  gap,
+  noCount = false,
+  smallArrow = false,
+  autoFlow = true,
+}) => {
   const [index, setIndex] = useState<number>(0);
 
   const childrenLength: number = useMemo(
@@ -67,15 +74,29 @@ const Slider: FC<{
           return cloneElement(child, { isActive: n === index, ref: refs[n] });
         })}
       </div>
-      <button
-        id="right-arrow"
-        onClick={() => slide(index + 1)}
-        className={`${styles.arrow} ${smallArrow ? styles.smallArrow : ""} ${
-          styles.rightArrow
-        }`}
-      >
-        <ReactSVG src="/assets/svg/greater-than.svg" />
-      </button>
+      {!autoFlow ? (
+        index !== childrenLength - 1 ? (
+          <button
+            id="right-arrow"
+            onClick={() => slide(index + 1)}
+            className={`${styles.arrow} ${
+              smallArrow ? styles.smallArrow : ""
+            } ${styles.rightArrow}`}
+          >
+            <ReactSVG src="/assets/svg/greater-than.svg" />
+          </button>
+        ) : null
+      ) : (
+        <button
+          id="right-arrow"
+          onClick={() => slide(index + 1)}
+          className={`${styles.arrow} ${smallArrow ? styles.smallArrow : ""} ${
+            styles.rightArrow
+          }`}
+        >
+          <ReactSVG src="/assets/svg/greater-than.svg" />
+        </button>
+      )}
       {!noCount && (
         <div className={styles.count}>
           <p>
