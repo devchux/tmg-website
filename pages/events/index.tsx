@@ -1,13 +1,29 @@
 import Image from "components/images/image";
 import PageHeading from "components/typography/pageHeading";
 import { useRouter } from "next/router";
-import React from "react";
+import React, { useState } from "react";
 import NextImage from "next/image";
 import styles from "styles/core.module.scss";
 import talentStyles from "styles/talents/talents.module.scss";
+import Slider from "components/slider";
+import SliderItem from "components/slider/sliderItem";
+import Modal from "components/modal";
 
 const Events = () => {
-  const router = useRouter();
+  const [isOpen, setIsOpen] = useState(false);
+  const [content, setContent] = useState<{
+    id: number;
+    image: string[];
+    name: string;
+    position: string;
+    description: string;
+  }>({
+    id: 0,
+    image: [],
+    name: "",
+    position: "",
+    description: "",
+  });
   const data = [
     {
       image: ["/assets/images/service1.png", "/assets/images/service2.png"],
@@ -131,7 +147,8 @@ const Events = () => {
             <div
               key={i}
               onClick={() => {
-                router.push(`/events/${i + 1}`);
+                setContent({ ...item, id: i });
+                setIsOpen(true);
               }}
             >
               <div className={talentStyles.singleImage}>
@@ -144,6 +161,34 @@ const Events = () => {
               </div>
             </div>
           ))}
+          <Modal isOpen={isOpen} toggle={() => setIsOpen(!isOpen)}>
+            <div className={talentStyles.modalContent}>
+              <div className={talentStyles.modalImage}>
+                {content.image.length <= 1 ? (
+                  <>
+                    {/* eslint-disable-next-line jsx-a11y/alt-text */}
+                    <Image src={content.image[0]} />
+                  </>
+                ) : (
+                  <Slider smallArrow noCount>
+                    {content.image.map((image, i) => (
+                      <SliderItem key={i}>
+                        {/* eslint-disable-next-line jsx-a11y/alt-text */}
+                        <Image src={image} />
+                      </SliderItem>
+                    ))}
+                  </Slider>
+                )}
+              </div>
+              <div className={talentStyles.text}>
+                <PageHeading className={talentStyles.modalTitle}>
+                  {content.name}
+                </PageHeading>
+                <h6>{content.position}</h6>
+                <p>{content.description}</p>
+              </div>
+            </div>
+          </Modal>
         </div>
       </div>
     </div>

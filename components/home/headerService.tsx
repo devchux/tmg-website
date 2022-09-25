@@ -8,14 +8,14 @@ const HeaderService: FC<{ title: string | ReactNode; source: string; onClick?: (
   onClick,
 }) => {
   return (
-    <div className={styles.headerService}>
+    <div className={styles.headerService} onClick={onClick}>
       <div
         className={styles.background}
         style={{ backgroundImage: `url(${source})` }}
       />
       <div className={styles.content}>
         <h5>{title}</h5>
-        <Button onClick={onClick}>LEARN MORE</Button>
+        {/* <Button onClick={onClick}>LEARN MORE</Button> */}
       </div>
     </div>
   );

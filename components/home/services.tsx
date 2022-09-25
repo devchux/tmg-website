@@ -1,4 +1,4 @@
-import Button from "components/buttons/button";
+// import Button from "components/buttons/button";
 import Slider from "components/slider";
 import SliderItem from "components/slider/sliderItem";
 import Heading from "components/typography/Heading";
@@ -23,7 +23,7 @@ const Services = () => {
                   creatives, focusing on career development and business
                   partnerships
                 </p>
-                <Button>LEARN MORE</Button>
+                {/* <Button>LEARN MORE</Button> */}
               </div>
             </div>
             <div>
@@ -46,7 +46,7 @@ const Services = () => {
                   Full-Service Management, Strategic Consulting, Creative
                   Partnerships.
                 </p>
-                <Button>LEARN MORE</Button>
+                {/* <Button>LEARN MORE</Button> */}
               </div>
             </div>
             <div>

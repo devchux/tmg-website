@@ -1,8 +1,10 @@
+import SubmitButton from "components/buttons/submitButton";
 import Image from "components/images/image";
 import Modal from "components/modal";
 import Slider from "components/slider";
 import SliderItem from "components/slider/sliderItem";
 import PageHeading from "components/typography/pageHeading";
+import { useRouter } from "next/router";
 import React, { useState } from "react";
 import styles from "styles/core.module.scss";
 import talentStyles from "styles/talents/talents.module.scss";
@@ -10,16 +12,19 @@ import talentStyles from "styles/talents/talents.module.scss";
 const Talents = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [content, setContent] = useState<{
+    id: number;
     image: string[];
     name: string;
     position: string;
     description: string;
   }>({
+    id: 0,
     image: [],
     name: "",
     position: "",
     description: "",
   });
+  const router = useRouter();
   const data = [
     {
       image: ["/assets/images/service1.png", "/assets/images/service2.png"],
@@ -60,7 +65,9 @@ const Talents = () => {
       <div className={styles.wrapper}>
         <div className={styles.header}>
           <div>
-            <PageHeading className={styles.colorRed}>Talent MANAGEMENT</PageHeading>
+            <PageHeading className={styles.colorRed}>
+              Talent MANAGEMENT
+            </PageHeading>
             <p>
               Management services for the creative industries; art, media and
               lifestyle. We design and implement exclusive strategies for
@@ -76,7 +83,7 @@ const Talents = () => {
             <div
               key={i}
               onClick={() => {
-                setContent(item);
+                setContent({...item, id: i});
                 setIsOpen(true);
               }}
             >
@@ -117,6 +124,15 @@ const Talents = () => {
             </PageHeading>
             <h6>{content.position}</h6>
             <p>{content.description}</p>
+            <div className={talentStyles.buttonWrapper}>
+              <SubmitButton
+                onClick={() => {
+                  router.push(`/talents/${content.id + 1}`);
+                }}
+              >
+                More Details
+              </SubmitButton>
+            </div>
           </div>
         </div>
       </Modal>

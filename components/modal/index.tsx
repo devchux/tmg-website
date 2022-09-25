@@ -13,6 +13,10 @@ const Modal: FC<{
     } else {
       document.body.style.overflow = "auto";
     }
+
+    return () => {
+      document.body.style.overflow = "auto";
+    };
   }, [isOpen]);
   return (
     <div className={`${styles.modal} ${isOpen ? styles.isOpen : ""}`}>
