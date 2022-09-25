@@ -5,7 +5,7 @@
 
   .arrow {
     &:first-child {
-      left: 30px;
+      left: 10px;
       transform: translateY(-50%) rotate(-180deg);
 
       @media only screen and (min-width: 1024px) {
@@ -14,7 +14,7 @@
     }
 
     &:last-child {
-      right: 30px;
+      right: 10px;
       @media only screen and (min-width: 1024px) {
         right: 65px;
       }
@@ -30,13 +30,6 @@
   background: transparent;
   cursor: pointer;
   z-index: 1;
-
-  @media only screen and (max-width: 768px) {
-    border: 1px solid #979797;
-    padding: 0.5em 1em;
-    top: auto;
-    bottom: 10px;
-  }
 }
 
 .carouselItemWrapper {
