@@ -17,11 +17,6 @@ const Footer = () => {
       </div>
       <div className={styles.content}>
         <div className={styles.description}>
-          <p>
-            Funding freemium long tail hypotheses first mover advantage asvisor
-            hypotheses. Venture twitter assets disruptive partnership paradigm
-            shift business-to-consumer.
-          </p>
           <div>
             <div className={styles.contact}>
               <ReactSVG src="/assets/svg/email.svg" />
@@ -35,22 +30,22 @@ const Footer = () => {
         </div>
         <div className={styles.sideLinks}>
           <div>
-            <p className={styles.title}>Services</p>
+            <p className={styles.title}>Explore</p>
             <div>
-              <Link href="/">Web Hosting</Link>
-              <Link href="/">Domains</Link>
-              <Link href="/">Premium Hosting</Link>
-              <Link href="/">Private Server</Link>
-              <Link href="/">E-mail Hosting</Link>
+              <Link href="/events">Events</Link>
+              <Link href="/talents">Talents</Link>
+              <Link href="/media">Entertainment and Media</Link>
+              {/* <Link href="/">Private Server</Link>
+              <Link href="/">E-mail Hosting</Link> */}
             </div>
           </div>
           <div>
-            <p className={styles.title}>About Us</p>
+            <p className={styles.title}>Company</p>
             <div>
-              <Link href="/">Milestone</Link>
-              <Link href="/">Check Our Pricing Plan</Link>
-              <Link href="/">Expert Team</Link>
-              <Link href="/">Our Exciting News</Link>
+              <Link href="/about">About Us</Link>
+              <Link href="/contact">Contact Us</Link>
+              {/* <Link href="/">Expert Team</Link>
+              <Link href="/">Our Exciting News</Link> */}
             </div>
           </div>
           <div>
