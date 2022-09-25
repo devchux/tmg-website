@@ -6,8 +6,9 @@ import PageHeading from "components/typography/pageHeading";
 import { GetServerSideProps } from "next";
 import Image from "next/image";
 import { useRouter } from "next/router";
-import React, { ReactNode, useEffect, useState } from "react";
+import React, { useEffect, useState } from "react";
 import { NotificationManager } from "react-notifications";
+import { ReactSVG } from "react-svg";
 import YouTube from "react-youtube";
 import styles from "styles/core.module.scss";
 import talentStyles from "styles/talents/talents.module.scss";
@@ -19,7 +20,16 @@ const Nihu = ({
   data: { items: any[]; nextPageToken?: string; prevPageToken?: string };
   query?: string;
 }) => {
+  const [trillers] = useState(["6r-04SJAOm0", "K96Er28SDbI"]);
+  const [index, setIndex] = useState(0);
   const router = useRouter();
+  const slide = (i: number) => {
+    if (i < 0) {
+      setIndex(trillers.length - 1);
+    } else {
+      setIndex(i % trillers.length);
+    }
+  };
   const opts = {
     height: "500px",
     width: "100%",
@@ -33,7 +43,7 @@ const Nihu = ({
       <div className={talentStyles.trailerWrapper}>
         <div>
           <YouTube
-            videoId="6r-04SJAOm0"
+            videoId={trillers[index]}
             opts={opts}
             onReady={(event) => event.target.playVideo()}
           />
@@ -50,6 +60,25 @@ const Nihu = ({
               Original programming providing diverse perspectives into life in
               Africa through in-depth documentaries and news stories.
             </p>
+            <div>
+              <button
+                id="right-arrow"
+                onClick={() => slide(index - 1)}
+                className={talentStyles.arrow}
+              >
+                <ReactSVG
+                  style={{ transform: "rotate(-180deg) translateY(0.2em)" }}
+                  src="/assets/svg/right-arrow.svg"
+                />
+              </button>
+              <button
+                id="right-arrow"
+                onClick={() => slide(index + 1)}
+                className={talentStyles.arrow}
+              >
+                <ReactSVG src="/assets/svg/right-arrow.svg" />
+              </button>
+            </div>
           </div>
         </div>
       </div>
