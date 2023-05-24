@@ -11,10 +11,11 @@ const Socialites = ({
 }) => {
   return (
     <div className={styles.socialites}>
-      {data.slice(0, 10).map(({ id, media_url, caption, permalink }) => {
+      {data?.slice(0, 10).map(({ id, media_url, caption, permalink }) => {
         return (
           <Link target="_blank" href={permalink} key={id}>
             <div className={styles.socialite}>
+              {/* eslint-disable-next-line @next/next/no-img-element */}
               <img src={media_url} alt={caption} />
               <div>
                 <ReactSVG src="/assets/svg/insta.svg" />

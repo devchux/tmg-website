@@ -34,7 +34,7 @@ const Slider: FC<{
   const refs = Array(childrenLength).fill(useRef(null));
 
   const childWidth = useMemo(
-    () => refs[index].current?.getBoundingClientRect().width || 0,
+    () => refs[index]?.current?.getBoundingClientRect().width || 0,
     [refs, index]
   );
 
