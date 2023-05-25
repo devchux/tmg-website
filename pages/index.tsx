@@ -42,11 +42,11 @@ export const getServerSideProps = async () => {
       }
     );
 
-    const { data: instaMedia } = await axios.get(
-      `https://graph.instagram.com/me/media?fields=id,caption,media_url,permalink&access_token=${process.env.FB_TOKEN}`
-    );
+    // const { data: instaMedia } = await axios.get(
+    //   `https://graph.instagram.com/me/media?fields=id,caption,media_url,permalink&access_token=${process.env.FB_TOKEN}`
+    // );
 
-    return { props: { playlistData: data, instaMedia } };
+    return { props: { playlistData: data, instaMedia: { data: [] } } };
   } catch (error: any) {
     return {
       props: {
