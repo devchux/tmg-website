@@ -11,7 +11,7 @@ import { NotificationManager } from "react-notifications";
 import { ReactSVG } from "react-svg";
 import YouTube from "react-youtube";
 import styles from "styles/core.module.scss";
-import talentStyles from "styles/talents/talents.module.scss";
+import talentStyles from "styles/management/management.module.scss";
 
 const Nihu = ({
   data,
@@ -116,23 +116,26 @@ const Nihu = ({
             </div>
           ))}
       </div>
-      <div className={talentStyles.navButtons}>
-        {data?.prevPageToken && (
-          <SubmitButton
-            outlined
-            onClick={() => router.push(`/media?q=${data?.prevPageToken}`)}
-          >
-            Prev &lt;&lt;
-          </SubmitButton>
-        )}
-        {data?.nextPageToken && (
-          <SubmitButton
-            onClick={() => router.push(`/media?q=${data?.nextPageToken}`)}
-          >
-            Next &gt;&gt;
-          </SubmitButton>
-        )}
-      </div>
+      {data?.prevPageToken ||
+        (data?.nextPageToken && (
+          <div className={talentStyles.navButtons}>
+            {data?.prevPageToken && (
+              <SubmitButton
+                outlined
+                onClick={() => router.push(`/media?q=${data?.prevPageToken}`)}
+              >
+                Prev &lt;&lt;
+              </SubmitButton>
+            )}
+            {data?.nextPageToken && (
+              <SubmitButton
+                onClick={() => router.push(`/media?q=${data?.nextPageToken}`)}
+              >
+                Next &gt;&gt;
+              </SubmitButton>
+            )}
+          </div>
+        ))}
     </div>
   );
 };
@@ -260,7 +263,7 @@ const Media = ({
         <div className={styles.header}>
           <div>
             <PageHeading className={styles.colorRed}>
-              Entertainment and media
+              Media and Entertainment
             </PageHeading>
             <p>
               Our talent pool of pros and skilled creatives originate, develop,

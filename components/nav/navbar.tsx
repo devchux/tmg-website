@@ -61,21 +61,21 @@ const Navbar = () => {
             </a>
           </Link>
 
-          <Link href="/events">
+          {/* <Link href="/events">
             <a style={{ transitionDelay: `${0.2 * 3}s` }} onClick={toggleMenu}>
               Events
             </a>
-          </Link>
+          </Link> */}
 
           <Link href="/media">
             <a style={{ transitionDelay: `${0.2 * 4}s` }} onClick={toggleMenu}>
-              Entertainment and media
+              Media and Entertainment
             </a>
           </Link>
 
-          <Link href="/talents">
+          <Link href="/management">
             <a style={{ transitionDelay: `${0.2 * 5}s` }} onClick={toggleMenu}>
-              Talent Managment
+              Management Services
             </a>
           </Link>
 

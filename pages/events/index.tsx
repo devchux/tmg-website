@@ -4,7 +4,7 @@ import { useRouter } from "next/router";
 import React, { useState } from "react";
 import NextImage from "next/image";
 import styles from "styles/core.module.scss";
-import talentStyles from "styles/talents/talents.module.scss";
+import talentStyles from "styles/management/management.module.scss";
 import Slider from "components/slider";
 import SliderItem from "components/slider/sliderItem";
 import Modal from "components/modal";

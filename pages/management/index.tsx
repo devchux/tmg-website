@@ -7,7 +7,7 @@ import PageHeading from "components/typography/pageHeading";
 import { useRouter } from "next/router";
 import React, { useState } from "react";
 import styles from "styles/core.module.scss";
-import talentStyles from "styles/talents/talents.module.scss";
+import talentStyles from "styles/management/management.module.scss";
 
 const Talents = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -76,11 +76,10 @@ const Talents = () => {
         <div className={styles.header}>
           <div>
             <PageHeading className={styles.colorRed}>
-              Talent MANAGEMENT
+              MANAGEMENT SERVICES
             </PageHeading>
             <p>
-              Management services for the creative industries; art, media and
-              lifestyle. We design and implement exclusive strategies for
+              We design and implement exclusive strategies for
               talents, geared toward image building and secure creative
               partnerships between talents and brands.
             </p>
@@ -137,7 +136,7 @@ const Talents = () => {
             <div className={talentStyles.buttonWrapper}>
               <SubmitButton
                 onClick={() => {
-                  router.push(`/talents/${content.id + 1}`);
+                  router.push(`/management/${content.id + 1}`);
                 }}
               >
                 More Details

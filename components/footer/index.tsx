@@ -20,7 +20,7 @@ const Footer = () => {
           <div>
             <div className={styles.contact}>
               <ReactSVG src="/assets/svg/email.svg" />
-              <Link href="/">agensi@mail.com</Link>
+              <a href="mailto:info@triphectamg.com">info@triphectamg.com</a>
             </div>
             <div className={styles.contact}>
               <ReactSVG src="/assets/svg/phone.svg" />
@@ -33,8 +33,8 @@ const Footer = () => {
             <p className={styles.title}>Explore</p>
             <div>
               <Link href="/events">Events</Link>
-              <Link href="/talents">Talents</Link>
-              <Link href="/media">Entertainment and Media</Link>
+              <Link href="/management">Management</Link>
+              <Link href="/media">Media and Entertainment</Link>
               {/* <Link href="/">Private Server</Link>
               <Link href="/">E-mail Hosting</Link> */}
             </div>
@@ -48,12 +48,12 @@ const Footer = () => {
               <Link href="/">Our Exciting News</Link> */}
             </div>
           </div>
-          <div>
+          {/* <div>
             <p className={styles.title}>Address</p>
             <div className={styles.address}>
               <p>123 Lorem Ipsum Street Jakarta, Indonesia</p>
             </div>
-          </div>
+          </div> */}
         </div>
       </div>
     </div>

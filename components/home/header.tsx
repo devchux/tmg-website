@@ -17,7 +17,7 @@ const Header = () => {
             </>
           }
           source="/assets/images/talent-management.png"
-          onClick={() => router.push("/talents")}
+          onClick={() => router.push("/management")}
         />
         <HeaderService
           title={
@@ -28,11 +28,11 @@ const Header = () => {
           source="/assets/images/entertainment.png"
           onClick={() => router.push("/media")}
         />
-        <HeaderService
+        {/* <HeaderService
           title="Events"
           source="/assets/images/events.png"
           onClick={() => router.push("/events")}
-        />
+        /> */}
       </div>
       <div className={styles.headerCarousel}>
         <Carousel>

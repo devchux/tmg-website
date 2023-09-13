@@ -16,12 +16,12 @@ const Partners = () => {
           width="158"
           style={{ background: "white" }}
         />
-        <Image
+        {/* <Image
           src="/assets/images/partners/3.png"
           alt=""
           height="195"
           width="256"
-        />
+        /> */}
         <Image
           src="/assets/images/partners/2.jpg"
           alt=""

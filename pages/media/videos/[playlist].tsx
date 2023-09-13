@@ -32,7 +32,9 @@ const Videos = ({ data, error, playlist, playlistData }: any) => {
       <div className={coreStyles.wrapper}>
         <div className={coreStyles.header}>
           <div>
-            <PageHeading className={coreStyles.colorRed}>{playlistData?.title}</PageHeading>
+            <PageHeading className={coreStyles.colorRed}>
+              {playlistData?.title}
+            </PageHeading>
             <p>{playlistData?.description}</p>
           </div>
         </div>
@@ -82,31 +84,34 @@ const Videos = ({ data, error, playlist, playlistData }: any) => {
               <p>No videos found.</p>
             )}
           </div>
-          <div className={styles.navButtons}>
-            {data?.prevPageToken && (
-              <SubmitButton
-                outlined
-                onClick={() =>
-                  router.push(
-                    `/media/videos/${playlist}?q=${data?.prevPageToken}`
-                  )
-                }
-              >
-                Prev &lt;&lt;
-              </SubmitButton>
-            )}
-            {data?.nextPageToken && (
-              <SubmitButton
-                onClick={() =>
-                  router.push(
-                    `/media/videos/${playlist}?q=${data?.nextPageToken}`
-                  )
-                }
-              >
-                Next &gt;&gt;
-              </SubmitButton>
-            )}
-          </div>
+          {data?.prevPageToken ||
+            (data?.nextPageToken && (
+              <div className={styles.navButtons}>
+                {data?.prevPageToken && (
+                  <SubmitButton
+                    outlined
+                    onClick={() =>
+                      router.push(
+                        `/media/videos/${playlist}?q=${data?.prevPageToken}`
+                      )
+                    }
+                  >
+                    Prev &lt;&lt;
+                  </SubmitButton>
+                )}
+                {data?.nextPageToken && (
+                  <SubmitButton
+                    onClick={() =>
+                      router.push(
+                        `/media/videos/${playlist}?q=${data?.nextPageToken}`
+                      )
+                    }
+                  >
+                    Next &gt;&gt;
+                  </SubmitButton>
+                )}
+              </div>
+            ))}
         </div>
       </div>
     </div>

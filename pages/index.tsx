@@ -51,7 +51,7 @@ export const getServerSideProps = async () => {
     return {
       props: {
         error: {
-          response: error.response.data,
+          response: error?.response?.data,
           message: "Playlists could not be fetched",
         },
       },
