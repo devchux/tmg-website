@@ -32,7 +32,7 @@ const Footer = () => {
           <div>
             <p className={styles.title}>Explore</p>
             <div>
-              <Link href="/events">Events</Link>
+              {/* <Link href="/events">Events</Link> */}
               <Link href="/management">Management</Link>
               <Link href="/media">Media and Entertainment</Link>
               {/* <Link href="/">Private Server</Link>
