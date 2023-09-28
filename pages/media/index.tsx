@@ -2,14 +2,13 @@ import axios from "axios";
 import Button from "components/buttons/button";
 import SubmitButton from "components/buttons/submitButton";
 import Select from "components/inputs/select";
+import Thriller from "components/media/thriller";
 import PageHeading from "components/typography/pageHeading";
 import { GetServerSideProps } from "next";
 import Image from "next/image";
 import { useRouter } from "next/router";
 import React, { useEffect, useState } from "react";
 import { NotificationManager } from "react-notifications";
-import { ReactSVG } from "react-svg";
-import YouTube from "react-youtube";
 import styles from "styles/core.module.scss";
 import talentStyles from "styles/management/management.module.scss";
 
@@ -20,122 +19,79 @@ const Nihu = ({
   data: { items: any[]; nextPageToken?: string; prevPageToken?: string };
   query?: string;
 }) => {
-  const [trillers] = useState(["6r-04SJAOm0", "K96Er28SDbI"]);
-  const [index, setIndex] = useState(0);
   const router = useRouter();
-  const slide = (i: number) => {
-    if (i < 0) {
-      setIndex(trillers.length - 1);
-    } else {
-      setIndex(i % trillers.length);
-    }
-  };
-  const opts = {
-    height: "500px",
-    width: "100%",
-    playerVars: {
-      // https://developers.google.com/youtube/player_parameters
-      autoplay: 1,
-    },
-  };
   return (
-    <div className={styles.wrapper}>
-      <div className={talentStyles.trailerWrapper}>
-        <div>
-          <YouTube
-            videoId={trillers[index]}
-            opts={opts}
-            onReady={(event) => event.target.playVideo()}
-          />
-        </div>
-        <div>
+    <div>
+      <div className={styles.wrapper}>
+        <div className={styles.header}>
           <div>
-            <Image
-              src="/assets/images/Logo_TRS.png"
-              alt=""
-              width="250"
-              height="80"
-            />
+            <h4>Nihu Media</h4>
             <p>
-              Original programming providing diverse perspectives into life in
-              Africa through in-depth documentaries and news stories.
+              At Nihu Media, we provide an impartial perspective of life in
+              Africa with documentaries, news stories and candid interviews.
             </p>
-            <div>
-              <button
-                id="right-arrow"
-                onClick={() => slide(index - 1)}
-                className={talentStyles.arrow}
-              >
-                <ReactSVG
-                  style={{ transform: "rotate(-180deg) translateY(0.2em)" }}
-                  src="/assets/svg/right-arrow.svg"
-                />
-              </button>
-              <button
-                id="right-arrow"
-                onClick={() => slide(index + 1)}
-                className={talentStyles.arrow}
-              >
-                <ReactSVG src="/assets/svg/right-arrow.svg" />
-              </button>
-            </div>
           </div>
         </div>
       </div>
-      <div className={talentStyles.list}>
-        {data?.items
-          .filter((_, i) => (!query ? i !== 0 : true))
-          .map((item: any, i: number) => (
-            <div
-              key={i}
-              onClick={() => {
-                router.push(`/media/videos/${item?.id}`);
-              }}
-            >
+      <div className={styles.wrapper}>
+        <Thriller thrillers={["6r-04SJAOm0", "K96Er28SDbI"]} />
+        <div className={talentStyles.list}>
+          {data?.items
+            .filter((_, i) => (!query ? i !== 0 : true))
+            .map((item: any, i: number) => (
               <div
-                className={talentStyles.singleImage + " " + talentStyles.border}
+                key={i}
+                onClick={() => {
+                  router.push(`/media/videos/${item?.id}`);
+                }}
               >
-                {/* eslint-disable-next-line jsx-a11y/alt-text */}
-                <Image
-                  layout="fill"
-                  src={item?.snippet?.thumbnails?.high?.url}
-                />
-                <div className={talentStyles.count}>
-                  <p>{item?.contentDetails?.itemCount}</p>
-                  <p>Video{item?.contentDetails?.itemCount > 1 && "s"}</p>
+                <div
+                  className={
+                    talentStyles.singleImage + " " + talentStyles.border
+                  }
+                >
+                  {/* eslint-disable-next-line jsx-a11y/alt-text */}
+                  <Image
+                    layout="fill"
+                    src={item?.snippet?.thumbnails?.high?.url}
+                  />
+                  <div className={talentStyles.count}>
+                    <p>{item?.contentDetails?.itemCount}</p>
+                    <p>Video{item?.contentDetails?.itemCount > 1 && "s"}</p>
+                  </div>
+                </div>
+                <div className={talentStyles.singleText}>
+                  <h5 className={talentStyles.singleTitle}>
+                    {item?.snippet?.title}
+                  </h5>
+                  <h6 className={talentStyles.singlePosition}>
+                    {item?.snippet?.description}
+                  </h6>
                 </div>
               </div>
-              <div className={talentStyles.singleText}>
-                <h5 className={talentStyles.singleTitle}>
-                  {item?.snippet?.title}
-                </h5>
-                <h6 className={talentStyles.singlePosition}>
-                  {item?.snippet?.description}
-                </h6>
-              </div>
+            ))}
+        </div>
+        {data?.prevPageToken ||
+          (data?.nextPageToken && (
+            <div className={talentStyles.navButtons}>
+              {data?.prevPageToken && (
+                <SubmitButton
+                  outlined
+                  onClick={() => router.push(`/media?q=${data?.prevPageToken}`)}
+                >
+                  Prev &lt;&lt;
+                </SubmitButton>
+              )}
+              {data?.nextPageToken && (
+                <SubmitButton
+                  onClick={() => router.push(`/media?q=${data?.nextPageToken}`)}
+                >
+                  Next &gt;&gt;
+                </SubmitButton>
+              )}
             </div>
           ))}
       </div>
-      {data?.prevPageToken ||
-        (data?.nextPageToken && (
-          <div className={talentStyles.navButtons}>
-            {data?.prevPageToken && (
-              <SubmitButton
-                outlined
-                onClick={() => router.push(`/media?q=${data?.prevPageToken}`)}
-              >
-                Prev &lt;&lt;
-              </SubmitButton>
-            )}
-            {data?.nextPageToken && (
-              <SubmitButton
-                onClick={() => router.push(`/media?q=${data?.nextPageToken}`)}
-              >
-                Next &gt;&gt;
-              </SubmitButton>
-            )}
-          </div>
-        ))}
     </div>
   );
 };
@@ -148,13 +104,15 @@ const Corporate = () => {
           <div>
             <h4>Corporate Productions</h4>
             <p>
-              We create captivating videos for TV commercials, corporate and
-              viral content with cinematic visuals and catchy storylines.
+              TMG is committed to delivering compelling stories with
+              eye-catching imagery. Our quality productions, in tandem with
+              strong storytelling, create engaging messaging for our clients.
             </p>
           </div>
         </div>
       </div>
       <div className={styles.wrapper}>
+        <Thriller thrillers={["T_HTBAEhZRs", "kIMHEN_AOcs"]} />
         <div className={talentStyles.list}>
           {Array(9)
             .fill(null)
@@ -193,11 +151,11 @@ const Production = () => {
           <div>
             <h4>Production Services</h4>
             <p>
-              Our exceptionally skilled team use modern filmmaking techniques to
-              deliver stunning visuals for a variety of productions including
-              film, documentaries, interview series, music videos and
-              photography. Additional services include concept development,
-              script writing, casting and location scouting.
+              Our talent pool of skilled creatives are available to develop and
+              produce content, experiences and events for a wide array of
+              clientele. We cover everything from pre-production to
+              post-production, live streaming, on location or in studio, and
+              pre-recordings for all screen formats; TVC, web and mobile.
             </p>
           </div>
         </div>
@@ -266,12 +224,10 @@ const Media = ({
               Media and Entertainment
             </PageHeading>
             <p>
-              Our talent pool of pros and skilled creatives originate, develop,
-              and produce concepts, themes, content, branded products,
-              experiences and events. We team up various creatives to produce
-              media for amusement, relaxation, fun, communication, advocacy and
-              edutainment - whether presented live on stage or screen, recorded,
-              or streamed, on web or mobile.
+              At TMG, we produce diverse and original African programming where
+              information and entertainment merge to provide an engaging and
+              refreshing experience. We also provide captivating content for
+              corporate and social enterprises.
             </p>
             <div className={styles.tabs}>
               <Button

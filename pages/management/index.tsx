@@ -4,6 +4,7 @@ import Modal from "components/modal";
 import Slider from "components/slider";
 import SliderItem from "components/slider/sliderItem";
 import PageHeading from "components/typography/pageHeading";
+import { ManagementPersonas } from "utils/lib";
 import { useRouter } from "next/router";
 import React, { useState } from "react";
 import styles from "styles/core.module.scss";
@@ -25,51 +26,7 @@ const Talents = () => {
     description: "",
   });
   const router = useRouter();
-  const data = [
-    {
-      image: [
-        "/assets/images/artist/1.jpg",
-        "/assets/images/artist/2.jpeg",
-        "/assets/images/artist/3.jpeg",
-        "/assets/images/artist/4.jpeg",
-        "/assets/images/artist/5.jpg",
-      ],
-      name: "Adenike Aderonke",
-      position: "Actor",
-      description: `Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-      eiusmod tempor incididunt ut labore et dolore magna aliqua. Quis
-      ipsum suspendisse ultrices gravida. Risus commodo viverra
-      maecenas accumsan lacus vel facilisis. Lorem ipsum dolor sit z
-      eiusmod tempor incididunt ut labore et dolore magna aliqua. Quis
-      ipsum suspendisse ultrices gravida. Risus commodo .`,
-    },
-    {
-      image: [
-        "/assets/images/sffl/1.png",
-        "/assets/images/sffl/2.jpg",
-        "/assets/images/sffl/3.jpg",
-      ],
-      name: "Eze Chukwudi",
-      position: "Actor",
-      description: `Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-      eiusmod tempor incididunt ut labore et dolore magna aliqua. Quis
-      ipsum suspendisse ultrices gravida. Risus commodo viverra
-      maecenas accumsan lacus vel facilisis. Lorem ipsum dolor sit z
-      eiusmod tempor incididunt ut labore et dolore magna aliqua. Quis
-      ipsum suspendisse ultrices gravida. Risus commodo .`,
-    },
-    {
-      image: ["/assets/images/service2.png", "/assets/images/service2.png"],
-      name: "Uncle Aderonke",
-      position: "Actor",
-      description: `Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-      eiusmod tempor incididunt ut labore et dolore magna aliqua. Quis
-      ipsum suspendisse ultrices gravida. Risus commodo viverra
-      maecenas accumsan lacus vel facilisis. Lorem ipsum dolor sit z
-      eiusmod tempor incididunt ut labore et dolore magna aliqua. Quis
-      ipsum suspendisse ultrices gravida. Risus commodo .`,
-    },
-  ];
+
   return (
     <div>
       <div className={styles.wrapper}>
@@ -79,16 +36,17 @@ const Talents = () => {
               MANAGEMENT SERVICES
             </PageHeading>
             <p>
-              We design and implement exclusive strategies for
-              talents, geared toward image building and secure creative
-              partnerships between talents and brands.
+              Our goal at TMG is to ensure maximum impact for our clients by
+              identifying the ideal brands for mutually beneficial impact. Our
+              interpersonal approach helps us develop strategic plans to create
+              sustainable growth for our clients.
             </p>
           </div>
         </div>
       </div>
       <div className={styles.wrapper}>
         <div className={talentStyles.list}>
-          {data.map((item, i) => (
+          {ManagementPersonas.map((item, i) => (
             <div
               key={i}
               onClick={() => {
@@ -136,7 +94,12 @@ const Talents = () => {
             <div className={talentStyles.buttonWrapper}>
               <SubmitButton
                 onClick={() => {
-                  router.push(`/management/${content.id + 1}`);
+                  router.push(
+                    `/management/${content.name
+                      .split(" ")
+                      .join("-")
+                      .toLowerCase()}`
+                  );
                 }}
               >
                 More Details

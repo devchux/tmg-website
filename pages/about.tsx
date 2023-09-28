@@ -1,11 +1,9 @@
 import Heading from "components/typography/Heading";
 import Image from "next/image";
-import React, { useState } from "react";
-import { ReactSVG } from "react-svg";
+import React from "react";
 import styles from "styles/about/about.module.scss";
 
 const About = () => {
-  const [play, setPlay] = useState(false);
   return (
     <div>
       <div className={styles.wrapper}>
@@ -13,8 +11,9 @@ const About = () => {
           <div className={styles.headerContent}>
             <Heading>About tmg</Heading>
             <p>
-              Triphecta Management Group is a holding company with investments
-              in Media, Entertainment and Brand Development
+              TMG is a creative focused company. From management to production,
+              we forge strategic partnerships to deliver optimal value to
+              clients and audiences alike.
             </p>
             {/* <div>
               <button onClick={() => setPlay(!play)}>
