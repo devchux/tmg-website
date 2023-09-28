@@ -113,13 +113,12 @@ const Corporate = () => {
       </div>
       <div className={styles.wrapper}>
         <Thriller thrillers={["T_HTBAEhZRs", "kIMHEN_AOcs"]} />
-        <div className={talentStyles.list}>
+        {/* <div className={talentStyles.list}>
           {Array(9)
             .fill(null)
             .map((item: any, i: number) => (
               <div key={i} onClick={() => {}}>
                 <div className={talentStyles.singleImage}>
-                  {/* eslint-disable-next-line jsx-a11y/alt-text */}
                   <Image
                     layout="fill"
                     src="/assets/images/talent-management.png"
@@ -137,7 +136,7 @@ const Corporate = () => {
                 </div>
               </div>
             ))}
-        </div>
+        </div> */}
       </div>
     </div>
   );
