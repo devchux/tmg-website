@@ -64,9 +64,9 @@ const Nihu = ({
                   <h5 className={talentStyles.singleTitle}>
                     {item?.snippet?.title}
                   </h5>
-                  <h6 className={talentStyles.singlePosition}>
+                  {/* <h6 className={talentStyles.singlePosition}>
                     {item?.snippet?.description}
-                  </h6>
+                  </h6> */}
                 </div>
               </div>
             ))}
@@ -159,17 +159,17 @@ const Production = () => {
           </div>
         </div>
       </div>
-      <div className={styles.wrapper}>
+      {/* <div className={styles.wrapper}>
         <div className={talentStyles.list}>
           {Array(9)
             .fill(null)
             .map((item: any, i: number) => (
               <div key={i} onClick={() => {}}>
                 <div className={talentStyles.singleImage}>
-                  {/* eslint-disable-next-line jsx-a11y/alt-text */}
                   <Image
                     layout="fill"
                     src="/assets/images/talent-management.png"
+                    alt=""
                   />
                   <div className={talentStyles.count}>
                     <p>40</p>
@@ -185,7 +185,7 @@ const Production = () => {
               </div>
             ))}
         </div>
-      </div>
+      </div> */}
     </div>
   );
 };

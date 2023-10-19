@@ -44,15 +44,15 @@
 }
 
 .modalTitle {
-  letter-spacing: 9px;
+  letter-spacing: 0.56rem;
 }
 
 .list {
   display: grid;
   grid-template-columns: repeat(1, 1fr);
-  gap: 40px;
-  max-width: 1280px;
-  padding: 40px 1em;
+  gap: 2.5rem;
+  max-width: 80rem;
+  padding: 2.5rem 1em;
   margin: auto;
 
   @media only screen and (min-width: 500px) {
