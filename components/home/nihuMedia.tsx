@@ -45,10 +45,10 @@ const NihuMedia = ({ playlist }: { playlist: any[] }) => {
                   </div>
                   <div className={styles.mediaDescription}>
                     <h6>{data?.snippet?.title}</h6>
-                    <p>
+                    {/* <p>
                       {data?.snippet?.description.slice(0, 100)}
                       {data?.snippet?.description.length > 100 && "..."}
-                    </p>
+                    </p> */}
                   </div>
                 </SliderItem>
               );

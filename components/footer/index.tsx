@@ -20,12 +20,12 @@ const Footer = () => {
           <div>
             <div className={styles.contact}>
               <ReactSVG src="/assets/svg/email.svg" />
-              <a href="mailto:info@triphectamg.com">info@triphectamg.com</a>
+              <a href="mailto:contacts@triphectamg.com">contacts@triphectamg.com</a>
             </div>
-            <div className={styles.contact}>
+            {/* <div className={styles.contact}>
               <ReactSVG src="/assets/svg/phone.svg" />
               <Link href="/">+ 12 3456 7890</Link>
-            </div>
+            </div> */}
           </div>
         </div>
         <div className={styles.sideLinks}>

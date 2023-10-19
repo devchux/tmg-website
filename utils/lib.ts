@@ -3,11 +3,10 @@ import { IManagementPersona } from "type";
 export const ManagementPersonas: IManagementPersona[] = [
     {
       image: [
-        "/assets/images/artist/1.jpg",
-        "/assets/images/artist/2.jpeg",
-        "/assets/images/artist/3.jpeg",
-        "/assets/images/artist/4.jpeg",
-        "/assets/images/artist/5.jpg",
+        "/assets/images/ayoola/1.jpg",
+        "/assets/images/ayoola/2.png",
+        "/assets/images/ayoola/3.png",
+        "/assets/images/ayoola/4.png",
       ],
       name: "AYOOLA GBOLAHAN",
       position: "Visual Artist",

@@ -120,7 +120,7 @@ ul {
 }
 
 .blog {
-  padding: 40px 0 20px 0;
+  // padding: 40px 0 20px 0;
 
   .entries {
     max-width: 1280px;
@@ -133,7 +133,7 @@ ul {
   box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
 }
 .blog .entry .entry-img {
-  height: 440px;
+  max-height: 440px;
   max-width: 800px;
   margin: 2em auto;
   overflow: hidden;
@@ -173,6 +173,19 @@ ul {
 }
 .blog .entry .entry-content p {
   color: #fff;
+}
+
+.blog .entry .entry-content hr {
+  margin: 2rem 0;
+}
+
+.blog .entry .entry-content .gallery {
+  display: grid;
+  margin-top: 2rem;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1rem;
+
+  & > .gallery-item {}
 }
 
 .blog .entry .entry-content a {

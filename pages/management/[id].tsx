@@ -35,23 +35,19 @@ const EventDetail = ({
             <div className="col-lg-6 entries">
               <article className="entry entry-single">
                 <div className="entry-img">
-                  {data.image.length <= 1 ? (
-                    <>
-                      {/* eslint-disable-next-line jsx-a11y/alt-text */}
-                      <Image
-                        src={data.image[0]}
-                        width="100%"
-                        height="70px"
-                        layout="responsive"
-                        className="img-fluid"
-                        alt=""
-                      />
-                    </>
+                  {/* {data.image.length <= 1 ? (
+                    <Image
+                      src={data.image[0]}
+                      width="100%"
+                      height="70px"
+                      layout="responsive"
+                      className="img-fluid"
+                      alt=""
+                    />
                   ) : (
                     <Slider smallArrow noCount>
                       {data.image.map((image, i) => (
                         <SliderItem key={i}>
-                          {/* eslint-disable-next-line jsx-a11y/alt-text */}
                           <Image
                             src={image}
                             width="100%"
@@ -63,21 +59,61 @@ const EventDetail = ({
                         </SliderItem>
                       ))}
                     </Slider>
-                  )}
-                  {/* <Image
-                    src="/assets/images/service3.png"
+                  )} */}
+                  <Image
+                    src={data.image[0]}
                     width="100%"
                     height="70px"
                     layout="responsive"
                     className="img-fluid"
+                    objectFit="cover"
                     alt=""
-                  /> */}
+                  />
                 </div>
                 <div className="entry-title">
                   <PageHeading>{data.name}</PageHeading>
                 </div>
                 <div className="mt-5 entry-content">
                   <p>{data.description}</p>
+                  <hr className="my-5 d-block" />
+                  <div>
+                    <h5>Gallery</h5>
+                    <div className="gallery">
+                      <div className="gallery-item">
+                        <Image
+                          src={data.image[1]}
+                          width="100%"
+                          height="70px"
+                          layout="responsive"
+                          className="img-fluid"
+                          objectFit="cover"
+                          alt=""
+                        />
+                      </div>
+                      <div className="gallery-item">
+                        <Image
+                          src={data.image[2]}
+                          width="100%"
+                          height="70px"
+                          layout="responsive"
+                          className="img-fluid"
+                          objectFit="cover"
+                          alt=""
+                        />
+                      </div>
+                      <div className="gallery-item">
+                        <Image
+                          src={data.image[3]}
+                          width="100%"
+                          height="70px"
+                          layout="responsive"
+                          className="img-fluid"
+                          objectFit="cover"
+                          alt=""
+                        />
+                      </div>
+                    </div>
+                  </div>
                 </div>
               </article>
             </div>

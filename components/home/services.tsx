@@ -51,7 +51,31 @@ const Services = () => {
             </div>
             <div>
               <Image
-                src="/assets/images/team-management.png"
+                src="/assets/images/strategic-patnerships.jpeg"
+                alt=""
+                layout="fill"
+              />
+            </div>
+          </div>
+        </SliderItem>
+        <SliderItem>
+          <div className={styles.content}>
+            <div>
+              <div>
+                <Heading>
+                  Production <br /> services
+                </Heading>
+                <p>
+                  We cover everything from pre-production to post-production,
+                  live streaming, on location or in studio, and pre-recordings
+                  for all screen formats; TVC, web and mobile.
+                </p>
+                {/* <Button>LEARN MORE</Button> */}
+              </div>
+            </div>
+            <div>
+              <Image
+                src="/assets/images/production-services.jpeg"
                 alt=""
                 layout="fill"
               />
