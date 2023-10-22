@@ -34,7 +34,12 @@ const Nihu = ({
         </div>
       </div>
       <div className={styles.wrapper}>
-        <Thriller thrillers={["6r-04SJAOm0", "K96Er28SDbI"]} />
+        <Thriller
+          image="/assets/images/Logo_TRS.png"
+          description="Original programming providing diverse perspectives into life in
+            Africa through in-depth documentaries and news stories."
+          thrillers={["6r-04SJAOm0", "K96Er28SDbI"]}
+        />
         <div className={talentStyles.list}>
           {data?.items
             .filter((_, i) => (!query ? i !== 0 : true))
@@ -112,7 +117,10 @@ const Corporate = () => {
         </div>
       </div>
       <div className={styles.wrapper}>
-        <Thriller thrillers={["T_HTBAEhZRs", "kIMHEN_AOcs"]} />
+        <Thriller
+          description="We create distinctive videos for TV commercials, corporate and viral content with cinematic visuals and catchy story lines."
+          thrillers={["T_HTBAEhZRs", "kIMHEN_AOcs"]}
+        />
         {/* <div className={talentStyles.list}>
           {Array(9)
             .fill(null)
@@ -159,6 +167,7 @@ const Production = () => {
           </div>
         </div>
       </div>
+      <Thriller thrillers={["6r-04SJAOm0", "K96Er28SDbI"]} description="Specialise in creative visuals with an exceptionally skilled team using modern filmmaking techniques  while handling all the production details - from concepts and script writing to location scouting and casting - to deliver quality work to a diverse client base. We provide services for a variety of productions including photo shoots, music videos, interviews, film and documentaries." />
       {/* <div className={styles.wrapper}>
         <div className={talentStyles.list}>
           {Array(9)
