@@ -22,7 +22,7 @@ const Header = () => {
         <HeaderService
           title={
             <>
-              Entertainment <br /> and media
+              Media and <br /> entertainment
             </>
           }
           source="/assets/images/entertainment.png"
