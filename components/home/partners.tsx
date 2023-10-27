@@ -11,26 +11,26 @@ const Partners = () => {
         <Image
           src="/assets/images/partners/1.png"
           alt=""
-          height="156"
+          height="256"
           width="256"
           style={{ background: "white" }}
         />
         <Image
           src="/assets/images/partners/2.png"
           alt=""
-          height="156"
+          height="256"
           width="256"
         />
         <Image
           src="/assets/images/partners/3.png"
           alt=""
-          height="156"
+          height="256"
           width="256"
         />
         <Image
           src="/assets/images/partners/4.png"
           alt=""
-          height="156"
+          height="256"
           width="256"
         />
       </div>

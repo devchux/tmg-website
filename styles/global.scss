@@ -183,9 +183,7 @@ ul {
   display: grid;
   margin-top: 2rem;
   grid-template-columns: repeat(2, 1fr);
-  gap: 1rem;
-
-  & > .gallery-item {}
+  gap: 2rem;
 }
 
 .blog .entry .entry-content a {

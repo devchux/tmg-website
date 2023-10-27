@@ -79,39 +79,19 @@ const EventDetail = ({
                   <div>
                     <h5>Gallery</h5>
                     <div className="gallery">
-                      <div className="gallery-item">
-                        <Image
-                          src={data.image[1]}
-                          width="100%"
-                          height="70px"
-                          layout="responsive"
-                          className="img-fluid"
-                          objectFit="cover"
-                          alt=""
-                        />
-                      </div>
-                      <div className="gallery-item">
-                        <Image
-                          src={data.image[2]}
-                          width="100%"
-                          height="70px"
-                          layout="responsive"
-                          className="img-fluid"
-                          objectFit="cover"
-                          alt=""
-                        />
-                      </div>
-                      <div className="gallery-item">
-                        <Image
-                          src={data.image[3]}
-                          width="100%"
-                          height="70px"
-                          layout="responsive"
-                          className="img-fluid"
-                          objectFit="cover"
-                          alt=""
-                        />
-                      </div>
+                      {data.image.slice(1).map((src) => (
+                        <div key={src} className="gallery-item">
+                          <Image
+                            src={src}
+                            width="100%"
+                            height="90"
+                            layout="responsive"
+                            // className="img-fluid"
+                            // objectFit="cover"
+                            alt=""
+                          />
+                        </div>
+                      ))}
                     </div>
                   </div>
                 </div>

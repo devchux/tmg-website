@@ -30,4 +30,8 @@
         flex-wrap: wrap;
         flex-direction: row;
     }
+
+    img {
+        object-fit: cover;
+    }
 }

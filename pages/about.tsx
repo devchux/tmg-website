@@ -35,52 +35,6 @@ const About = () => {
           <p>Tell compelling stories. Build relationships. Grow brands.</p>
         </div>
       </div>
-      <div className={styles.wrapper}>
-        <div className={styles.mission}>
-          <Heading>Entertainment and Media</Heading>
-          <p>
-            At TMG, we produce diverse and original African programming where
-            information and entertainment merge to provide an engaging and
-            refreshing experience. We also provide captivating content for
-            corporate and social enterprises.
-          </p>
-          {/* <div className={styles.cultureImages}>
-            <div></div>
-            <div></div>
-          </div> */}
-        </div>
-      </div>
-      <div className={styles.wrapper}>
-        <div className={styles.mission}>
-          <Heading>Production Services</Heading>
-          <p>
-            Our talent pool of skilled creatives are available to develop and
-            produce content, experiences and events for a wide array of
-            clientele. We cover everything from pre-production to
-            post-production, live streaming, on location or in studio, and
-            pre-recordings for all screen formats; TVC, web and mobile.
-          </p>
-          {/* <div className={styles.cultureImages}>
-            <div></div>
-            <div></div>
-          </div> */}
-        </div>
-      </div>
-      <div className={styles.wrapper}>
-        <div className={styles.mission}>
-          <Heading>Management Services</Heading>
-          <p>
-            Our goal at TMG is to ensure maximum impact for our clients by
-            identifying the ideal brands for mutually beneficial impact. Our
-            interpersonal approach helps us develop strategic plans to create
-            sustainable growth for our clients.
-          </p>
-          {/* <div className={styles.cultureImages}>
-            <div></div>
-            <div></div>
-          </div> */}
-        </div>
-      </div>
       {/* <div className={styles.wrapper}>
         <div className={styles.boardTeam}>
           <div className={styles.board}>

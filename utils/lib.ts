@@ -7,6 +7,7 @@ export const ManagementPersonas: IManagementPersona[] = [
         "/assets/images/ayoola/2.png",
         "/assets/images/ayoola/3.png",
         "/assets/images/ayoola/4.png",
+        "/assets/images/ayoola/5.jpeg",
       ],
       name: "AYOOLA GBOLAHAN",
       position: "Visual Artist",
