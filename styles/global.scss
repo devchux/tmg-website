@@ -1,37 +1,4 @@
-@font-face {
-  font-family: "aeonik-bold";
-  src: url("../fonts/AeonikTRIAL-Bold.otf");
-}
-
-@font-face {
-  font-family: "aeonik-bold-italics";
-  src: url("../fonts/AeonikTRIAL-BoldItalic.otf");
-}
-
-@font-face {
-  font-family: "aeonik-light";
-  src: url("../fonts/AeonikTRIAL-Light.otf");
-}
-
-@font-face {
-  font-family: "aeonik-light-italic";
-  src: url("../fonts/AeonikTRIAL-LightItalic.otf");
-}
-
-@font-face {
-  font-family: "aeonik-regular";
-  src: url("../fonts/AeonikTRIAL-Regular.otf");
-}
-
-@font-face {
-  font-family: "aeonik-regular-italic";
-  src: url("../fonts/AeonikTRIAL-RegularItalic.otf");
-}
-
-@font-face {
-  font-family: "american-captain";
-  src: url("../fonts/American-Captain.otf");
-}
+@import url('/assets/fonts/stylesheet.css');
 
 * {
   margin: 0;
@@ -42,11 +9,12 @@
 body {
   background-color: #000000 !important;
   scroll-behavior: smooth;
+  font-family: "DM Sans";
 }
 
 h1, h2, h3, h4, h5, h6 {
   color: #ffff;
-  font-family: "aeonik-bold";
+  font-family: "DM Sans";
 }
 
 h1 {
@@ -100,7 +68,7 @@ h6 {
 p,
 a,
 li {
-  font-family: "aeonik-regular";
+  font-family: "DM Sans";
   color: #ffffff;
   font-size: 1.5rem;
   line-height: 33px;
